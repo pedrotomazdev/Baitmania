@@ -1,0 +1,271 @@
+.page-comparador{
+    
+    .comparador {
+        text-align: left;
+    }
+    
+    .page-content{
+        background: #fff;
+        margin-top: 30px;
+        padding: 30px;
+        
+        h1{
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            @include typo(2.5rem, 400, $font, 2.5rem);
+        }
+    }
+    
+    .comparatorTabs{
+        font-size: 0;
+        margin-bottom: -2px;
+        
+        &:after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+        
+        li{
+            float: left;
+            
+            &.aberta{
+                
+                a{
+                    background: #fff;
+                    border: 1px solid #eee;
+                    border-bottom: none;
+                    color: #3d4445;
+                    font: 400 15px/35px $font;
+                    padding: 0 40px 0 30px;
+                    text-transform: none;
+                    text-decoration: none;
+                    
+                    &.closeCat{
+                        background: #fff;
+                        border-radius: 20px;
+                        border: 1px solid #3d4445;
+                        color: #3d4445;
+                        font-size: 11px;
+                        height: 20px;
+                        line-height: 20px;
+                        padding: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        top: 8px;
+                        width: 20px;
+                        
+                        &:hover{
+                            background: red;
+                            color: #fff;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+        
+        a{
+            background: #3d4445;
+            border: 1px solid #eee;
+            color: #fff;
+            font: 400 15px/35px $font;
+            padding: 0 40px 0 30px;
+            text-decoration: none;
+            
+            &.closeCat{
+                background: #fff;
+                border-radius: 20px;
+                border: 1px solid #3d4445;
+                color: #3d4445;
+                font-size: 11px;
+                height: 20px;
+                line-height: 20px;
+                padding: 0;
+                position: absolute;
+                right: 10px;
+                text-align: center;
+                top: 8px;
+                width: 20px;
+                
+                &:hover{
+                    background: red;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    .comparator{
+        border: 1px solid #eee;
+        font-size: 0;
+        margin: 0 0 30px;
+        
+        > ul{
+            font-size: 0;
+            overflow: hidden;
+            
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            
+            > li.Labels{
+                display: none;
+            }
+            
+            // colums
+            > li{
+                border-left: 1px solid #eee;
+                padding: 10px 0 0 0;
+                width: 25%;
+                
+                -webkit-box-flex: 1 auto;
+                   -moz-box-flex: 1 auto;
+                    -webkit-flex: 1 auto;
+                        -ms-flex: 1 1 auto;
+                            flex: 1 auto;
+                
+                &:nth-child(2){
+                    border-left: none;
+                }
+                
+                ul{
+                    
+                    // rows
+                    li{
+                        border-top: 1px solid #eee;
+                        font-size: 1.4rem;
+                        min-height: 80px;
+                        padding: 30px;
+                        
+                        &:first-child{
+                            border-top: none;
+                        }
+                        
+                        &.comparsionFoto{
+                            border: none;
+                            
+                            > a:first-child{
+                                color: #3d4445;
+                                display: block;
+                                font-size: 1.4rem;
+                                height: 180px;
+                                text-align: center;
+                                
+                                img{
+                                    display: block;
+                                    margin: 0 auto 15px;
+                                }
+                            }
+                            
+                            > div:nth-child(2){
+                                font-size: 1.4rem;
+                                height: 40px;
+                                
+                                img{
+                                    display: block;
+                                    margin: 0 auto;
+                                }
+                            }
+                            
+                            .closeComp{
+                                background: #fff;
+                                border-radius: 20px;
+                                border: 1px solid #3d4445;
+                                color: #3d4445;
+                                font-size: 11px;
+                                height: 20px;
+                                line-height: 20px;
+                                padding: 0;
+                                position: absolute;
+                                right: 10px;
+                                text-align: center;
+                                top: 8px;
+                                width: 20px;
+                            }
+                        }
+                        
+                        &.comparsionInfoPreco{
+                            font-size: 1rem;
+                            height: 110px;
+                        }
+                        
+                        &.comparsionDescricao{
+                            height: 160px;
+                        }
+                    }
+                }
+            }
+            
+            // ranking
+            .ranking{
+                font-size: 0;
+                line-height: 0;
+                margin-bottom: 15px;
+                
+                .star0, .star1, .star2, .star3, .star4, .star5{
+                    background-image: url('../img/ranking.png');
+                    background-repeat: no-repeat;
+                    display: block;
+                    float: none;
+                    height: 15px;
+                    width: 96px;
+                }
+                
+                .star5 {
+                    background-position: 0 0;
+                }
+                
+                .star4 {
+                    background-position: -20px 0;
+                }
+                
+                .star3 {
+                    background-position: -40px 0;
+                }
+                
+                .star2 {
+                    background-position: -60px 0;
+                }
+                
+                .star1 {
+                    background-position: -80px 0;
+                }
+                
+                .star0 {
+                    background-position: -100px 0;
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width: 480px){
+        
+        .page-content {
+            padding: 15px;
+        }
+        
+        .comparatorTabs{
+            
+            li{
+                display: block;
+                float: none;
+            }
+            
+        }
+        
+        .comparator > ul > li ul li{
+            padding: 10px;
+        }
+        
+        .comparator > ul > li ul li.comparsionDescricao{
+            overflow-x: scroll;
+        }
+        
+    }
+}

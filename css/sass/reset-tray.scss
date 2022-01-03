@@ -1,0 +1,1230 @@
+// atoms
+hr {
+    border-style: inset;
+    border-top: none;
+    border-width: 1px;
+    clear: both;
+    display: block;
+    height: auto;
+    
+    -webkit-margin-before: 0.5em;
+     -webkit-margin-after: 0.5em;
+    -webkit-margin-start: auto;
+      -webkit-margin-end: auto;
+}
+
+a{
+	text-decoration: none;
+	
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.catalogo-comparator{
+    background: none;
+    border: none;
+    float: none;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: auto;
+    
+    &:hover{
+        background: none;
+        color: inherit;
+    }
+}
+
+// cross sell
+.compreJunto{
+    padding: 0;
+    
+    > li{
+        border-bottom: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+        
+        div{
+            
+            .plus{
+                float: none;
+                font-size: inherit;
+                font-weight: 400;
+                margin: 0;
+                text-align: left;
+                width: auto;
+            }
+        }
+    }
+    
+    .fotosCompreJunto{
+        float: none;
+        width: auto;
+        
+        .produto{
+            float: none;
+            width: auto;
+            
+            .unidades_topo {
+                margin: 0;
+                text-align: left;
+                width: auto;
+            }
+            
+            span{
+                height: auto;
+                text-align: left;
+                width: auto;
+                
+                div{
+                    height: auto;
+                    text-align: left;
+                }
+            }
+            
+            > div{
+                margin: 0;
+                width: auto;
+            }
+            
+            .select{
+                width: auto;
+            }
+            
+            .varTit{
+                background: none;
+                color: inherit;
+                font-weight: 400;
+                padding: 0;
+            }
+        }
+    }
+    
+    .precoCompreJunto{
+        border: none;
+        float: none;
+        height: auto;
+        padding: 0;
+        width: auto;
+        
+        .precosCompreJunto{
+            margin: 0;
+            
+            ul{
+                padding: 0;    
+            }
+            
+            li{
+                text-align: left;
+            }
+        }
+        
+        .botao-compre-junto{
+            float: none;
+        }
+    }
+}
+
+// organism
+#ProdAbas{
+    background: none;
+    display: block;
+    letter-spacing: 0;
+    text-transform: initial;
+    
+    ul{
+        padding: 0;
+    }
+    
+    li{
+        float: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+        
+        &.aberta{
+            background: none;
+            float: none;
+            margin: 0;
+            
+            a{
+                background: none;
+                font-size: initial;
+                font-weight: initial;
+                padding: 0;
+            }
+        }
+    }
+    
+    a{
+        background: none;
+        font-size: initial;
+        padding: 0;
+    }
+}
+
+#CadastroAbas{
+    background: none;
+    border: none;
+    display: block;
+    letter-spacing: 0;
+    text-transform: initial;
+    
+    ul{
+        padding: 0;
+    }
+    
+    li{
+        float: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+        
+        &.aberta{
+            background: none;
+            float: none;
+            margin: 0;
+            
+            a{
+                background: none;
+                font-size: initial;
+                font-weight: initial;
+                padding: 0;
+            }
+        }
+    }
+    
+    a{
+        background: none;
+        padding: 0;
+    }
+}
+
+html{
+    .botao-commerce,
+    .botao-commerce:hover,
+    .botao-commerce:link,
+    .remove-bg .botao-comprar{
+        background: #3d4445;
+        border-radius: 0;
+        border: none;
+        color: #fff;
+        
+        .botao-commerce-img{
+            background: none;
+            padding: 0;
+        }
+    }
+    
+    .botao-destaque,
+    .botao-frete,
+    .botao-indisponivel,
+    .botao-lancamento{
+        display: block;
+        margin: 5px 0;
+        
+        &:hover{
+            display: block;
+        }
+    }
+}
+
+.Mapa{
+    height: auto;
+    position: static;
+    right: initial;
+    top: initial;
+    width: auto;
+}
+
+#NavLogoTray{
+    display: block;
+    overflow: hidden;
+}
+
+// background classes
+.board {
+    margin: 0;
+    position: static;
+}
+
+.Seguro{
+    position: static;
+    right: initial;
+    top: initial;
+    font: initial;
+    color: initial;
+    
+    img{
+        position: static;
+        top: initial;
+    }
+}
+
+.tablePage{
+    border: none;
+    
+    th{
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    
+    td{
+        background: none;
+        border: none;
+        font-size: initial;
+        padding: 0;
+        position: static;
+    }
+}
+
+.bottom{
+    background: none;
+    height: auto;
+}
+
+.leftCorner2{
+    background: none;
+    float: none;
+    height: auto;
+    min-height: auto;
+    padding: 0;
+    width: auto;
+}
+
+.bRight {
+    background: none;
+    float: none;
+    height: auto;
+    width: auto;
+}
+
+.bLeft{
+    background: none;
+    float: none;
+    height: auto;
+    width: auto;
+}
+
+.leftCorner {
+    background: none;
+    float: none;
+    height: auto;
+    min-height: 0;
+    width: auto;
+}
+
+.topBorder {
+    background: none;
+    height: auto;
+    position: static;
+    width: auto;
+}
+
+.prodBox{
+    background: none;
+    color: initial;
+    font-size: initial;
+}
+
+.container{
+    background: none;
+    float: none;
+    position: static;
+}
+
+.container2{
+    background: none;
+    float: none;
+    position: static;
+    width: auto;
+}
+
+.container3{
+    background: none;
+    border: none;
+    position: static;
+    width: auto;
+}
+
+.bgcolor{
+    background: #000;
+}
+
+.suggestion-products .suggestion-img img {
+    max-height: 100%;
+}
+
+.precoAvista,
+.precoparc{
+    font-size: initial;
+    font-weight: initial;
+}
+
+#Page{
+    
+    fieldset{
+        background: none;
+        border: none;
+        line-height: 1;
+        padding: 0;
+        position: static;
+    }
+    
+    .text{
+        background: none;
+        color: initial;
+        font-size: initial;
+        font-weight: initial;
+        height: auto;
+        line-height: 1;
+        margin: 0;
+    }
+}
+
+// alert
+.blocoAlerta,
+.blocoSucesso,
+.message,
+.bonus_cupom,
+.mensagensErro{
+    background: #f2dede;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: #a94442;
+    display: block;
+    font: 400 12px Arial,Helvetica,sans-serif;
+    margin: 10px;
+    padding: 15px;
+    
+    .red,
+    .red a{
+        color: inherit;
+        font-weight: 400;
+    }
+}
+
+.blocoSucesso,
+.bonus_cupom{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+// sitemap
+.Mapa{
+    background: url('../img/sitemap.png') no-repeat left top;
+    float: right;
+    height: 32px;
+    margin-bottom: -29px;
+    width: 32px;
+    position: relative;
+    z-index: 100;
+
+    img{
+        display: none;
+    }
+}
+
+.MapaSite{
+    margin: 0;
+    width: 100%;
+}
+
+// variation
+.onVar,
+.onVar:hover{
+    background: none;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.varCont{
+    border: none;
+    padding: 0;
+    
+    > *{
+        margin: 0 !important;
+    }
+}
+
+.texto_variacao {
+    padding: 0;
+    overflow: hidden;
+    
+    h2{
+        float: none;
+        width: auto;
+    }
+}
+
+.texto_variacao span {
+    float: none;
+    margin: 0;
+}
+
+.show_size_and_color_type.passo1{
+    margin: 0;
+}
+
+.lista_cor_variacao,
+.lista_cor_variacao2{
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    
+    li{
+        float: none;
+        margin: 0;
+        padding: 0;
+        
+        img,
+        div{
+            border: none;
+            padding: 0;
+            
+            &.cor_selecionada{
+                background: none;
+                border: none !important;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.sem_estoque{
+    background: none;
+}
+
+
+// related
+#Relacionados{
+    text-align: left;
+    
+    ul{
+        
+        li{
+            float: none;
+            font-size: initial;
+            padding: 0;
+            width: auto;
+            
+            .NomeProdLista{
+                font-size: initial;
+                font-weight: initial;
+                text-align: left;
+            }
+        }
+    }
+    
+    .FotoLista{
+        margin: 0;
+    }
+}
+
+// cart
+.excluir{
+    float: none;
+    margin: 0;
+    position: static;
+    right: initial;
+    top: initial;
+}
+
+.qntd {
+    background: none;
+    border: none;
+    font-size: initial;
+    height: auto;
+    text-align: left;
+    width: auto;
+}
+
+.margem_imagem_frete{
+    margin: 0;
+}
+
+.caixa-forma-frete{
+    
+    .tablePage{
+        margin: 0 !important;
+        width: 100%;
+    }
+}
+
+// product
+#info{
+    padding: 0;
+    
+    a{
+        border: none;
+        padding: 0;
+        
+        &:hover{
+            background: none;
+        }
+    }
+}
+
+#colFotos{
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#foto_p{
+    border: none;
+    padding: 0;
+}
+
+#foto_a{
+    border-top: 1px solid #ccc;
+}
+
+.cloud-zoom img{
+    margin: 0 !important;
+}
+
+.produto-zoom-detalhe{
+    display: none;
+}
+
+#info_preco{
+    
+    > br:first-child{
+        display: none;
+    }
+}
+
+#cepbox {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#preco{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+#botoes{
+    float: none;
+    max-height: 100%;
+    padding: 0;
+    width: auto;
+    text-align:left;
+}
+
+#quantidade{
+    border: none;
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.Forma1{
+    
+    li{
+        background: none;
+        border: none;
+        
+        &:hover{
+            background: none;
+            
+            table{
+                background: none;
+            }
+        }
+        
+        a{
+            padding: 0;
+        }
+    }
+    
+    .tablePags{
+        border: none;
+    }
+}
+
+#linkPagParcelado{
+    border: none;
+    font-size: 100%;
+    font-weight: 400;
+    padding: 0;
+    display: none;
+}
+
+.ranking{
+    border: none;
+    float: none;
+    padding: 0;
+}
+
+.rateBlock{
+    border: none;
+    display: block;
+    font-size: 100%;
+    line-height: 1;
+    padding: 0;
+    width: 100%;
+}
+
+.line{
+    border: none;
+    height: auto;
+}
+
+// login
+.page-login {
+    .Login{
+        float: none;
+        width: auto;
+    }
+    
+    .Cadastro {
+        float: none;
+        width: auto; 
+    }
+}
+
+#email_login{
+    width: auto !important;
+}
+
+#senha_login{
+    width: auto !important;
+}
+
+#email_cadastro{
+    width: auto !important;
+}
+
+.caixa-cadastro{
+    
+    p{
+        margin: 0;
+    }
+}
+
+// catalog navegacao_visitados
+.catalogo-galeria{
+    
+    .change {
+        margin: 0;
+        text-align: left;
+    }
+    
+    #Vitrine{
+        text-align: left;
+    }
+    
+    ul{
+        border: none;
+        list-style: none;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        width: auto;
+        
+        li{
+            width: auto;
+            
+            img{
+                margin: 0;
+            }
+        }
+    }
+    
+    li{
+        border: none;
+        float: none;
+        position: static;
+    }
+    
+    .Foto{
+        text-align: left;
+    }
+    
+    .dados{
+        text-align: left;
+    }
+    
+    .nomeProd{
+        
+        a{
+            font-size: initial;
+            font-weight: initial;
+            text-align: left;
+        }
+    }
+}
+
+.bts2 {
+    background: none;
+    border: none;
+    font: initial;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: static;
+    right: initial;
+    text-align: left;
+    top: initial;
+    width: auto;
+}
+
+.BoxVisitados{
+    
+    ul{
+        
+        li{
+            border: none;
+            display: block;
+            float: none;
+            margin: 0;
+            padding: 0;
+            position: static;
+        }
+    }
+    
+    h2 {
+        background: none;
+        border: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// checkout payment
+.Forma2{
+    display: block;
+    
+    ul{
+        display: block;
+    }
+    
+    li{
+        float: none;
+        margin: 0;
+        text-align: left;
+        width: auto;
+        
+        ul li{
+            float: none;
+            width: auto;
+        }
+    }
+    
+    h3 {
+        background: none;
+        border: none;
+        padding: 0;
+    }
+}
+
+.finalizarBT {
+    bottom: initial;
+    display: block;
+    position: static;
+    right: initial;
+}
+
+.noneListStyle{
+    
+    li{
+        clear: both;
+        margin: 0;
+        
+        &:after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+    }
+}
+
+.observacao{
+    .textarea{
+        width: 100% !important;
+    }
+}
+
+
+// visited
+#NavVisitados{
+    text-align: left;
+    
+    ul{
+        
+        li{
+            float: none;
+            padding: 0;
+            width: auto;
+        }
+    }
+}
+
+.FotoLista{
+    margin: 0;
+}
+
+.NomeProdLista{
+    font-weight: 400;
+    text-align: left;
+}
+
+.paginacao_ajax_prod{
+    float: none;    
+}
+
+.total_produtos {
+    float: none;
+    margin: 0;
+}
+
+.pageON {
+    background: none;
+    color: #000!important;
+    font-size: inherit;
+    font-weight: 400;
+    padding: 0;
+}
+
+.visitados{
+    background: none;
+    border: none;
+    min-height: 0;
+    padding: 0;
+    position: static;
+}
+
+.visitados_itens{
+    border: none;
+    float: none;
+    min-height: 0;
+    // width: auto;
+    
+    .itens{
+        border: none;
+        font-size: inherit;
+        margin: 0;
+        min-height: 0;
+        width: auto;
+    }
+    
+    div{
+        text-align: left;
+    }
+}
+
+.myNavigation{
+    border: none;
+    background: none;
+    color: #000;
+    font-size: inherit;
+    padding: 0;
+    position: static;
+}
+
+.visitados_produtos{
+    margin: 0;
+    min-width: 0;
+}
+
+.paginacao_ajax{
+    border: none;
+    font-size: inherit;
+    height: auto;
+    margin: 0;
+}
+
+.clearVisiteds{
+    background: none;
+    border: none;
+    color: #000;
+    float: none;
+    font-size: inherit;
+    padding: 0;
+    position: static;
+}
+
+// tag cloud
+#NavTagCloud{
+    
+    h2{
+        background: none;
+        color: #000 !important;
+        font: inherit;
+        padding: 0;
+    }
+    
+    span{
+        background: none;
+        border: none;
+    }
+}
+
+// custumer central
+.icoPai{
+    display: none;
+}
+
+.icoFilho{
+    border: none;
+    height: 110px;
+    width: 33.3333%;
+    
+    &:nth-child(5),
+    &:nth-child(12),
+    &:nth-child(15){
+        border-right: none;
+    }
+    
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(15){
+        border-bottom: none;
+    }
+    
+    &:hover{
+        box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media screen and (max-width: 767px){
+        border: none;
+        width: 50%;
+    }
+    
+    p{
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+}
+
+
+// orders
+.Pedidos{
+    border: none;
+    
+    th{
+        background: none;
+    }
+}
+
+.TimeLine5,
+.TimeLine7{
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+    padding: 0;
+    
+    ul{
+        li{
+            line-height: 1;
+        }
+    }
+    
+    + p{
+        font-size: 1.4rem;
+        text-align: center;
+        
+        span,
+        a{
+            display: block;
+            margin: 10px;
+        }
+    }
+    
+    ~ p{
+        font-size: 1.4rem;
+    }
+}
+
+// comparator
+.comparatorTabs{
+    
+    ul{
+        border-bottom: none;
+        display: table;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-transform: none;
+        width: 100%;
+    }
+    
+    li{
+        background: none;
+        float: none;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        
+        &.aberta{
+            
+            a{
+                font-size: inherit;
+                font-weight: 400;
+                padding: 0;
+            }
+            
+            .closeCat{
+                border: none;
+                font-size: inherit;
+                padding: 0;
+                position: static;
+                
+                &:hover{
+                    background: none;
+                    color: inherit;
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+        .closeCat{
+            border: none;
+            font-size: inherit;
+            padding: 0;
+            position: static;
+            
+            &:hover{
+                background: none;
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    a{
+        background: none;
+        color: inherit;
+        padding: 0;
+    }
+}
+
+.comparator{
+    
+    ul{
+        padding: 0;
+        
+        // colum that describes each row
+        li.Labels{
+            border: none;
+            float: none;
+            font: inherit;
+            margin: 0;
+            overflow: visible;
+            width: auto;
+            
+            ul{
+                
+                li{
+                    background: none;
+                    border: none;
+                    height: auto;
+                    overflow: visible;
+                    padding: 0;
+                    position: static;
+                    text-align: left;
+                    
+                    &.comparsionFoto{
+                        background: none;
+                    }
+                    
+                    &:hover{
+                        background: none;
+                    }
+                }
+            }
+        }
+        
+        
+        li{
+            border: none;
+            float: none;
+            font: inherit;
+            margin: 0;
+            overflow: visible;
+            width: auto;
+            
+            ul{
+                
+                li,
+                .comparsionFoto,
+                .comparsionInfoPreco{
+                    background: none;
+                    border: none;
+                    height: auto;
+                    overflow: visible;
+                    padding: 0;
+                    text-align: left;
+                    
+                    &:hover{
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lista-produtos {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    
+    .lista-produto-imagem {
+        width: auto;
+        text-align: left;
+        float: none;
+    }
+    
+    .nomeProd {
+        font-size: 1.4rem;
+        font-weight: 400;
+        height: auto;
+        margin: 0;
+        display: block;
+        color: inherit;
+    }
+    
+    .lista-produto-dados {
+        float: none;
+        margin: 0;
+        
+        br {
+            display: none;
+        }
+    }
+    
+    .lista-produto-solicitados,
+    .lista-produto-valores,
+    .lista-produto-comprar,
+    .lista-produto-quantidade {
+        float: none;
+        margin: 0;
+        text-align: left;
+        width: auto;
+    }
+    
+    .lista-produto-qtde {
+        margin: 0;
+    }
+}
+
+.page-lista {
+    .filtros {
+        margin: 0;
+        float: none;
+    }
+}

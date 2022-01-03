@@ -1,0 +1,194 @@
+/* div.prod-item:hover a {
+  text-decoration: none !important;
+}
+@media (min-width: 991px) {
+  div.prod-item div.product-image {
+    height: 255px;
+  }
+}
+@media (max-width: 440px) {
+  div.prod-item div.product-image {
+    height: 170px;
+  }
+}
+
+@media (max-width: 990px) {
+  html.page-catalog div.prod-item, html.page-search div.prod-item {
+    border-left: none;
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 991px) {
+  div.primario-footer div.seguranca {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 990px) {
+  div.newsletter-main section.newsletter-content {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  div[data-title] {
+    position: relative;
+  }
+  div[data-title]:before {
+    -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
+            clip-path: polygon(100% 50%, 0 0, 0 100%);
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 5%;
+    background-color: #C3161C;
+  }
+  div[data-title].ativo:before {
+    -webkit-clip-path: polygon(50% 100%, 100% 0, 0 0);
+            clip-path: polygon(50% 100%, 100% 0, 0 0);
+  }
+}
+
+@media (max-width: 990px) {
+  div[data-tab] {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+  }
+  div[data-tab].ativo {
+    max-height: 10000px;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+  }
+}
+
+header.main-header {
+  border: none;
+}
+header.main-header.ativo {
+  border: none;
+}
+
+@media (max-width: 990px) {
+  div.menu-mobile div.menu-content div.header-menu {
+    border-bottom: 2px solid #f5f5f5;
+  }
+}
+@media (max-width: 990px) {
+  div.menu-mobile div.menu-content div.footer-menu-mobile {
+    border-top: 2px solid #f5f5f5;
+  }
+}
+
+div.hover-overlay:hover {
+  z-index: 101;
+}
+
+header.main-header div.content-header div.account-cart div.item-header i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.prod-item h2.product-name {
+  margin: 0;
+}
+@media (max-width: 990px) {
+  div.prod-item h2.product-name {
+    font-size: 12px;
+  }
+}
+
+div.prod-item div.calculado {
+  margin: 0;
+}
+
+@media (max-width: 990px) {
+  html.page-catalog div.prod-item a.btn-comprar-spot,
+html.page-home div.prod-item a.btn-comprar-spot {
+    display: block;
+    font-size: 12px;
+  }
+}
+@media (max-width: 990px) {
+  div.prod-item div.product-price div.price-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 5px;
+  }
+}
+@media (max-width: 990px) {
+  div.prod-item div.product-price span.price-offer {
+    font-size: 16px;
+  }
+}
+@media (max-width: 990px) {
+  aside.sidebar form.new-smart-filter {
+    border: none;
+  }
+}
+
+aside.sidebar form.new-smart-filter h2.open-filters i svg * {
+  fill: #fff;
+}
+
+@media (max-width: 990px) {
+  div.catalog-content div.header-catalog-content div.mini-filter form.catalogo-form-filtros label i.icon-select {
+    top: inherit;
+    right: 25px;
+    bottom: 3px;
+  }
+}
+
+@media (max-width: 990px) {
+  div.catalog-content div.header-catalog-content div.mini-filter form.catalogo-form-filtros label select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 990px) {
+  div.vitrine-produtos div.col-md-3.col-xs-6.col-sm-4 {
+    padding: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  div.vitrine-home div.container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  div.content-catalog-product div.col-md-4.col-xs-6.col-sm-4 {
+    padding: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  html.page-search div.col-md-9.col-xs-12 {
+    padding: 0;
+  }
+  html.page-search main.container {
+    padding: 0;
+  }
+  html.page-search main.container div.container {
+    padding: 0;
+  }
+} */

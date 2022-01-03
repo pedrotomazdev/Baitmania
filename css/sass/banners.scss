@@ -1,0 +1,86 @@
+/**
+ * Banners
+ */
+
+.banner{
+    text-align: center;
+}
+
+.banner-home{
+    position: relative;
+    z-index: 10;
+    
+    @media screen and (max-width: $sm){ padding: 0 15px; }
+    
+    .slick-slide{
+        img{ margin: 0 auto; }
+    }
+
+    .slick-arrow{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    .arrow-next{
+        right: 15px;
+    }
+
+    .arrow-prev{
+        left: 15px;
+    }
+
+    .slick-dots{
+        bottom: 15px;
+        left: 0;
+        margin-top: 5px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+
+        li{
+            display: inline-block;
+            margin: 0 3px;
+        }
+
+        button{
+            border-radius: 15px;
+            border: none;
+            font-size: 0;
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
+
+.banner-ruler{
+    margin-top: 30px;
+}
+
+.banner-widget{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    @media screen and (max-width: $sm){
+        .mini-banner{
+            margin: 10px 0;
+        }
+    }
+}
+
+.banner-widget-home{
+    margin-top: 30px;
+}
+
+.mini-banner3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mobile-off{
+    @media screen and (max-width: $sm){
+        display: none;
+    }
+}

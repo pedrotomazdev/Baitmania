@@ -1,0 +1,124 @@
+.page-login{
+    
+    .carrinho-heading,
+    .titulo-login{
+        display: none;
+    }
+    
+    .page-content{
+        margin-top: 30px;
+    }
+    
+    .mensagensErro{
+        margin: -20px 0 10px;
+    }
+    
+    .caixa-login{
+        background: #f9f9f9;
+        float: left;
+        margin-right: 3%;
+        min-height: 360px;
+        padding: 30px 60px;
+        width: 48.5%;
+        
+        h3{
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    }
+    
+    .caixa-cadastro{
+        background: #f9f9f9; 
+        float: left;
+        min-height: 360px;
+        padding: 30px 60px;
+        width: 48.5%;
+        
+        h3{
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    }
+    
+    label{
+        display: block;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    
+    > input[type="text"],
+    #email_cadastro,
+    #email_login,
+    #senha_login{
+        border: 1px solid #eee;
+        display: block;
+        margin: 5px 0 30px;
+        padding: 6px 10px;
+        width: 100% !important;
+    }
+    
+    fieldset{
+        text-align: center;
+        
+        br{
+            display: none;
+        }
+        
+        button{
+            padding: 10px 30px;
+        }
+    }
+    
+    .cadastro-desc{
+        display: none;
+    }
+    
+    .login-campos-obrigatorios{
+        display: none;
+    }
+    
+    .cadastro-campo.campo-cep{
+        text-align: left;
+        
+        label{
+            display: inline-block;
+        }
+        
+        input{
+            border: 1px solid #eee;
+            margin: 5px 0 30px;
+            font-size: 1.6rem;
+            text-align: center;
+            padding: 6px 10px;
+        }
+    }
+    
+    .recuperar-senha{
+        margin-top: 30px;
+        
+        a{
+            color: #3d4445;
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media screen and (max-width: 480px){
+        
+        .caixa-cadastro {
+            margin: 30px 0 0 0;
+        }
+        
+        .caixa-cadastro, 
+        .caixa-login{
+            display: block;
+            float: none;
+            padding: 20px;
+            width: 100%;
+        }
+        
+    }
+}

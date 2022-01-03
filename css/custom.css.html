@@ -1,0 +1,295 @@
+.modal-backdrop {
+        position:static;
+}
+.page-product .botao-comprar{
+    background: {{ settings.color_bg_buy_button }} !important;
+}
+
+.botao-commerce-img{
+  color: {{settings.color_txt_buy_button}};
+}
+ 
+.page-product .product-buy-button svg{
+    fill: {{ settings.color_txt_buy_button }};
+} 
+
+.page-product .product-quantity>div>span:nth-child(1){
+    background: {{ settings.color_bg_buy_qty}};
+}
+ 
+.page-product .product-quantity>div>span:nth-child(2){
+    background: {{ settings.color_bg_buy_qty}};
+}
+
+.page-product .product-quantity>div>span:nth-child(1):before{
+    background: {{ settings.color_symb_buy_qty }};
+}
+.page-product .product-quantity>div>span:nth-child(1):after{
+    background: {{ settings.color_symb_buy_qty }};   
+}
+
+.page-product .product-quantity>div>span:nth-child(2):before{
+    background: {{ settings.color_symb_buy_qty }};
+}
+
+.page-product #cepbox .botao-simular-frete{
+    background: {{ settings.color_bg_buy_ship }};
+    color: {{ settings.color_txt_buy_ship }};
+}
+
+.page-product .products-related>h4{
+    color: {{ settings.color_subtitle_related }};
+}
+
+.page-product .products-related>h3{
+    color: {{ settings.color_title_related }};
+}
+
+.page-product .products-visited>h3{
+    color: {{ settings.color_title_visited }};
+}
+
+.page-catalog .catalog-header{
+    background: {{ settings.color_bg_body }};
+}
+
+.page-catalog .sidebar{
+    background: {{ settings.color_bg_filter }};
+}
+
+.page-product .products-visited>h4, .page-product .products-visited .total_produtos, .page-product .products-visited .paginacao_ajax_prod, .page-product .products-visited .visitados_itens h4 {
+    color: {{ settings.color_subtitle_visited }};
+}
+
+.page-product .products-visited .paginacao_ajax_prod #linksPag .pageON, .page-product .products-visited .myNavigation, .page-product .products-visited .clearVisiteds,
+.page-catalog #NavVisitados .clearVisiteds,
+.page-catalog #NavVisitados .myNavigation,
+.page-catalog #NavVisitados .paginacao_ajax_prod #linksPag .pageON,
+.page-search #NavVisitados .clearVisiteds,
+.page-search #NavVisitados .myNavigation,
+.page-search #NavVisitados .paginacao_ajax_prod #linksPag .pageON {
+    background: {{ settings.color_bg_button_visited }};
+    color: {{ settings.color_txt_button_visited }} !important; 
+}
+    
+
+.store-email svg {
+    fill: {{ settings.color_bg_secundaria }};
+}
+
+.store-phones svg {
+    fill: {{ settings.color_bg_secundaria }};
+}
+
+.open-info svg {
+    fill: {{ settings.color_bg_secundaria }};
+}
+
+.showcase .slick-arrow.slick-next:before {
+    border-left: 10px solid {{ settings.color_bg_secundaria }};
+}
+
+.showcase .slick-arrow.slick-prev:before {
+    border-right: 10px solid {{ settings.color_bg_secundaria }};
+}
+
+.showcase .slick-arrow {
+    border: 1px solid {{ settings.color_bg_secundaria }};
+}
+
+.product-1:hover:before{
+    border-color: {{ settings.color_bg_primaria }};
+}
+
+.showcase .slick-dots li.slick-active,
+.box_skitter .info_slide .image_number_select, .box_skitter .info_slide .image_number_select:hover,
+.foo-rating .dep_link a,
+.page-register #CadastroAbas .aberta a,
+.page-product .slider-nav .slick-arrow,
+.page-product .product-cross-sell .fotosCompreJunto .plus:after,
+.page-product .product-cross-sell .fotosCompreJunto .plus:before,
+.product-1 .product-buttons a{
+    background: {{ settings.color_bg_primaria }};
+}
+
+.page-product .product-tabs #ProdAbas li{
+    background: {{ settings.color_bg_aba }};
+}
+.page-product .product-tabs #ProdAbas a{
+    color: {{ settings.color_txt_aba }};
+}
+
+.page-product .product-cross-sell .fotosCompreJunto .plus {
+    border: 1px solid {{ settings.color_bg_primaria }};
+}
+
+.page-product .product-cross-sell .precoCompreJunto div:first-child strong,
+.page-checkout_payment .caixa-detalhes-compra .caixa-frete+tr+tr .valores_carrinho h3,
+.page-product .product-cross-sell>h3 {
+    color: {{ settings.color_bg_primaria }};
+}
+
+.page-newsletter h1.color,
+.tagcloud>h3,
+.foo-rating>h3,
+.cart-1 .cart-info b{
+    color: {{ settings.color_bg_secundaria }};
+}
+
+.cart{
+    fill: {{ settings.cart_color }} !important;
+}
+
+.cart .cart-icon>span{
+    background: {{ settings.cart_color_qtd }};
+    color: {{ settings.cart_color_txt }};
+}
+
+.newsletter form input{
+    color: {{ settings.color_txt_email }};
+}
+
+.cart-1 .cart-info b {
+    border-bottom: 1px solid {{ settings.color_bg_secundaria }};
+}
+
+.foo-rating .dep_item {
+    color: {{ settings.color_texto_avaliacao }};
+}
+
+.tagcloud>h4{
+    color: {{ settings.color_title_tags }};
+}
+
+.foo-rating>h4{
+    color: {{ settings.color_title_avaliacao }};
+}
+
+.tagcloud a {
+    color: {{ settings.color_texto_tags }};
+}
+
+.foo-message .message-footer {
+   color: {{ settings.color_texto_msgrodape }};
+}
+
+.fixed {
+    border-bottom: 5px solid {{ settings.color_bg_primaria }};
+}
+
+.customer{
+    background: {{ settings.color_topbar_bg }};
+    color: {{ settings.color_topbar_font }};
+}
+
+.customer a,
+.customer-1 .orders > *{
+    color: {{ settings.color_topbar_font }};
+}
+
+.customer a:hover{
+    color: {{ settings.color_topbar_font_hover }};
+}
+
+.customer-1 .orders > *{
+    border-color: {{ settings.color_topbar_font }};
+}
+
+.nav-full,
+.wrapper-nav,
+.horizontal-nav .item-level1,
+.horizontal-nav .item-level2,
+.horizontal-nav .item-level3,
+.horizontal-nav .item-level4{
+    background: {{ settings.color_menu_bg }};
+}
+
+.horizontal-nav .link-level1,
+.horizontal-nav .link-level2,
+.horizontal-nav .link-level3,
+.horizontal-nav .link-level4{
+    color: {{ settings.color_menu_font }};
+}
+
+.menu-mobile {
+    background: {{ settings.color_menu_bg }};
+}
+
+.menu-mobile .link-level1,
+.menu-mobile .link-level2,
+.menu-mobile .link-level3 {
+    color: {{ settings.color_menu_font }};
+}
+
+.foo-message {
+    background: {{ settings.color_bg_primaria }};
+}
+
+.foo-social svg,
+.foo-contact i svg{
+    fill: {{ settings.color_foo_social }};
+}
+
+.newsletter i {
+    border: 1px solid {{ settings.color_news_texto1 }};
+}
+
+.newsletter form button {
+    background: {{ settings.color_btn_background }};
+    color: {{ settings.color_btn_texto }};
+}
+
+.newsletter h2{
+    color: {{ settings.color_news_texto1 }};
+}
+
+.newsletter h3{
+   color:{{ settings.color_news_sub_title}}
+}
+
+.product .product-name,
+.product .product-payment,
+.product .product-payment span,
+.product .product-payment strong,
+.page-product .products-visited .NomeProdLista{
+    color: {{ settings.color_product_name }};
+}
+
+.product .product-price,
+.page-product .products-visited .ValoresLista .precoAvista,
+.page-product #preco .PrecoPrincipal{
+    color: {{ settings.color_product_price }};
+}
+
+.product .product-image .discount{
+    background-color: {{ settings.color_product_price }};
+}
+
+.showcase > h2 strong{
+    color: {{ settings.color_showcase_color }};
+}
+
+.banner-home .slick-arrow{
+    fill: {{ settings.color_slick_arrow }};
+}
+
+.banner-home .slick-arrow:hover{
+    fill: {{ settings.color_slick_arrow_hover }};
+}
+
+.banner-home .slick-dots button{
+    background: {{ settings.color_slick_dot }};
+}
+
+.banner-home .slick-dots .slick-active button{
+    background: {{ settings.color_slick_dot_active }};
+}
+
+.newsletter .newsletter-email{
+    border: 1px solid {{ settings.newsletter_email }};
+}
+
+.newsletter .newsletter-email::placeholder{
+    color: {{ settings.newsletter_email }};
+}
+

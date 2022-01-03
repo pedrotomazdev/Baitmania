@@ -1,0 +1,307 @@
+.foo-content{
+    background: #fff;
+    padding: 70px 0 35px;
+    
+    h3{
+        color: #555;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        
+        @include typo(1.5rem, 700, $font, 2rem); 
+    }
+    
+    h5{
+        color: #555;
+        margin: 5px 0;
+        padding: 0 0 0 5px;
+        text-transform: uppercase;
+        
+        @include typo(1rem, 700, $font, 1.5rem);
+    }
+    
+    .links-list{
+        
+        li{
+            margin-bottom: 10px;
+        }
+        
+        a{
+            color: #555;
+            display: inline-block; 
+            
+            @include typo(1.5rem, 300, $font, 1.5rem);
+        }
+    }
+    
+    .payment-gateways{
+        
+        .payment-form{
+            padding: 3px;
+            
+            img{
+                max-height: 27px;
+            }
+        }
+        
+        .row{
+            margin-left: -3px;
+            margin-right: 0;
+        }
+        
+        svg{
+            max-width: 100%;
+        }
+    }
+    
+    @media screen and (max-width: $sm){
+        
+        .container > div{
+            margin-top: 70px;
+            
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.foo-rating{
+    background: #f9f9f9;
+    margin-top: 30px;
+    padding: 30px;
+    
+    > h4{
+        color: #c8c8c8;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        @include typo(1.3rem, 400, $font, 1.3rem);
+    }
+    
+    > h3{
+        color: #4b8cdc;
+        text-transform: uppercase;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    }
+    
+    .dep_lista{
+        font-size: 0;
+        margin: 15px -15px 0;
+    }
+    
+    .dep_item{
+        display: inline-block;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        vertical-align: top;
+        width: 50%;
+        
+        @media screen and (max-width: $sm){
+            width: 100%;
+        }
+    }
+    
+    .dep_dados{
+        padding: 15px;
+        
+        > li{
+            
+            > span{
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .dep_link{
+        margin-top: 15px;
+        font-size: 0;
+        text-align: center;
+        
+        a{
+            background: #4b8cdc;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 9px 40px;
+            text-transform: uppercase;
+            
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.tagcloud{
+    background: #f9f9f9;
+    font-size: 2rem;
+    margin-top: 30px;
+    padding: 30px;
+    word-break: break-all;
+    
+    @media (max-width: 767px){
+        padding: 15px;
+    }
+    
+    > h4{
+        color: #c8c8c8;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        @include typo(1.3rem, 400, $font, 1.3rem);
+    }
+    
+    > h3{
+        color: #4b8cdc;
+        text-transform: uppercase;
+        @include typo(2.3rem, 400, $font, 2.5rem);
+    }
+    
+    a{
+        display: inline-block;
+        padding: 5px;
+    }
+    
+    #NavTagCloud{
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            display: none;
+        }
+        
+        a{
+            color: #3d4445;
+        }
+    }
+}
+
+.foo-payment{
+    max-width: 320px;
+}
+
+.foo-social{
+    background: #fff;
+    padding-bottom: 35px;
+    text-align: center;
+    
+    .container{
+        border-top: 2px solid #ebebeb;
+        padding-top: 30px;
+    }
+    
+    @media screen and (min-width: 768px){
+        .row-centered{
+            margin: 0 auto;
+            width: 480px;        
+        }
+    }
+    
+    @media screen and (max-width: $sm){
+        .social-icon{
+            padding: 0 4px;
+            
+            svg{
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.foo-contact{
+    
+    @media screen and (min-width: 768px) and (max-width: 992px){
+        margin-bottom: 70px;
+    }
+    
+    i{
+        border-radius: 36px;
+        border: 1px solid #b1b1b1;
+        display: inline-block;
+        font-size: 0;
+        height: 36px;
+        margin-right: 10px;
+        text-align: center;
+        vertical-align: middle;
+        width: 36px;
+        
+        &:before{
+            content: '';
+            display: inline-block;
+            height: 36px;
+            vertical-align: middle;
+            width: 1%;
+        }
+        
+        svg{
+            display: inline-block;
+            max-width: 99%;
+            vertical-align: middle;
+        }
+    }
+    
+    .store-whatsapp{
+        
+        i{
+            border: none;
+        }
+    }
+    
+    p{
+        color: #555;
+        display: inline-block;
+        vertical-align: middle;
+        width: 80%;
+        @include typo(1.3rem, 400, $font, 2rem);
+    }
+    
+    a{
+        color: #555;
+        font-size: 1.5rem;
+    }
+    
+    li{
+        margin-top: 17px;
+        
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+}
+
+.foo-seals{
+    
+    > li{
+        margin-bottom: 10px;
+    }
+    
+    .seal-ebit{
+        margin-right: 10px;
+    }
+    
+    center{
+        text-align: left;
+    }
+    
+    .google-safe{
+        background: #fff;
+        border-radius: 3px;
+        display: inline-block;
+        padding: 3px;
+        width: 115px;
+    }
+}
+
+.foo-message{
+    background: #b92400;
+    color: #a0a2a3;
+    margin-bottom: 10px;
+    padding: 25px 0;
+    text-align: center;
+    
+    @include typo(1.5rem, 400, $font, 1.5rem);
+    
+    .message-footer {
+        color: #fff;
+    }
+}

@@ -1,0 +1,227 @@
+{% spaceless %}
+<!doctype html>
+<html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
+
+<head>
+	<!-- tray meta and styles -->
+	{{ html.charset() }}
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	{{ tray.meta }}
+	{{ tray.styles }}
+
+
+	<!-- FontAwesome -->
+	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet"
+		id="font-awesome-5-kit-css1">
+	<link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"
+		rel="stylesheet" id="font-awesome-5-kit-css2">
+	<link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet"
+		id="font-awesome-5-kit-css3">
+
+
+	<!-- theme css-->
+	<link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
+	<!-- <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css"> -->
+	<link rel="stylesheet" href="{{ asset('css/agenciar8.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ asset('css/new-css.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
+
+	<!-- tray scripts -->
+	{{ tray.analytics }}
+	{{ googleTagManager.header(pages.current, tagManagerData) }}
+</head>
+
+<body>
+
+	{% if settings.float_whatsapp %}
+	<div class="zap-zap-{{settings.whatsapp_position}}">
+		<h3>
+			<a target="_blank"
+				href="https://api.whatsapp.com/send?phone=55{{ settings.contato_whatsapp|replace({'(': '', ')': '', '-': '', ' ':'' }) }}&text=Ol%C3%A1,%20gostaria%20de%20ajuda...">
+
+				<i>
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+						xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 512 512"
+						style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+						<g>
+							<path xmlns="http://www.w3.org/2000/svg" style=""
+								d="M0,512l35.31-128C12.359,344.276,0,300.138,0,254.234C0,114.759,114.759,0,255.117,0  S512,114.759,512,254.234S395.476,512,255.117,512c-44.138,0-86.51-14.124-124.469-35.31L0,512z"
+								fill="#ededed" data-original="#ededed" class=""></path>
+							<path xmlns="http://www.w3.org/2000/svg" style=""
+								d="M137.71,430.786l7.945,4.414c32.662,20.303,70.621,32.662,110.345,32.662  c115.641,0,211.862-96.221,211.862-213.628S371.641,44.138,255.117,44.138S44.138,137.71,44.138,254.234  c0,40.607,11.476,80.331,32.662,113.876l5.297,7.945l-20.303,74.152L137.71,430.786z"
+								fill="#55cd6c" data-original="#55cd6c" class=""></path>
+							<path xmlns="http://www.w3.org/2000/svg" style=""
+								d="M187.145,135.945l-16.772-0.883c-5.297,0-10.593,1.766-14.124,5.297  c-7.945,7.062-21.186,20.303-24.717,37.959c-6.179,26.483,3.531,58.262,26.483,90.041s67.09,82.979,144.772,105.048  c24.717,7.062,44.138,2.648,60.028-7.062c12.359-7.945,20.303-20.303,22.952-33.545l2.648-12.359  c0.883-3.531-0.883-7.945-4.414-9.71l-55.614-25.6c-3.531-1.766-7.945-0.883-10.593,2.648l-22.069,28.248  c-1.766,1.766-4.414,2.648-7.062,1.766c-15.007-5.297-65.324-26.483-92.69-79.448c-0.883-2.648-0.883-5.297,0.883-7.062  l21.186-23.834c1.766-2.648,2.648-6.179,1.766-8.828l-25.6-57.379C193.324,138.593,190.676,135.945,187.145,135.945"
+								fill="#fefefe" data-original="#fefefe" class=""></path>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+						</g>
+					</svg>
+				</i>
+			</a>
+		</h3>
+	</div>
+	{% endif %}
+
+	{{ googleTagManager.top(pages.current, tagManagerData) }}
+
+	{% element 'snippets/messages' %}
+
+	{% element 'menu-mobile' %}
+	<div id="overlay"></div>
+
+	<div class="application" style="background-color: #fff;">
+
+		{% element 'header' %}
+
+
+		{% element 'snippets/banner-home' %}
+
+		{% if pages.current == 'home' %}
+		{% element 'snippets/banner-tarja' %}
+		{% endif %}
+		<main class="site-main container">
+			{% if pages.current != 'home' or pages.current != 'product' %}
+			{% if showLeft %}
+			{% element 'sidebar_left' %}
+			{% endif %}
+			{% endif %}
+
+			{% if "central" in pages.current %}
+			{% element 'sidebar-central' %}
+			{% endif %}
+
+			<section class="page-content {{ 'central' in pages.current ? 'col-sm-9' : '' }}">
+				{{ content_for_layout }}
+			</section>
+		</main>
+
+		{% element 'footer' %}
+
+	</div>
+
+	{% element 'snippets/credits' %}
+	<!-- tray -->
+	<div id="modal2">
+		{% element 'snippets/modal' %}
+		{{ googleTagManager.bottom(pages.current, tagManagerData) }}
+		{{ tray.scripts }}
+		{{
+		html.script({
+		'0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+		'1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
+		})
+		}}
+		{% element 'snippets/pageview' %}
+		{{ store.chat }}
+	</div>
+	<!-- theme scripts-->
+	<script>
+		document.getElementById('modal2').style.display = "none";
+	</script>
+	<script src="{{ asset('js/slick.min.js') }}"></script>
+	<script src="{{ asset('js/agenciar8.js') }}"></script>
+
+	<!-- theme scripts-->
+	{% if pages.current == 'product' %}
+	<script src="{{ asset('js/zoom.js') }}"></script>
+	{% endif %}
+
+	{% if pages.current == 'product' %}
+	<script>
+		if (window.innerWidth > 990) {
+			(function ($) {
+				jQuery("#zoom").ezPlus();
+			})(jQuery);
+		}
+	</script>
+	<script>
+		jQuery("#opcoes0 li .labelMultiVariacao").each(function () {
+			var img = jQuery(this).find("img").attr("src")
+			img = img.replace("180_", "")
+			jQuery(this).find("img").remove()
+			jQuery(this).prepend('<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_zoom"><img src=' + img + '></button>')
+		})
+		jQuery("#opcoes0 li .labelMultiVariacao button").click(function () {
+			var imagem = jQuery(this).find("img").attr("src")
+			jQuery("#modal_zoom img").attr("src", imagem)
+		})
+
+	</script>
+	{% endif %}
+
+	<div class="box-cookies" id="cookieBlock">
+		<p class="msg-cookies">
+			Nosso site usa cookies para melhorar sua experi&#x00EA;ncia de navega&#x00E7;&#x00E3;o. Ao continuar navegando,
+			voc&#x00EA; concorda com
+			a nossa
+			<a href="/privacidade">Pol&#x00ED;tica de Privacidade.</a>
+		</p>
+		<button class="btn-cookies" id="btnCookie">Entendi</button>
+	</div>
+	<script>
+		var btnCookie = document.getElementById('btnCookie');
+		var cookieBlock = document.getElementById('cookieBlock');
+
+		btnCookie.addEventListener('click', function () {
+			cookieBlock.classList.remove('ativo');
+			document.cookie = "nenzim" + "=" + "brabo" + ";" + ";path=/";
+		});
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+
+		var user = getCookie("nenzim");
+		if (user != "") {
+
+		} else {
+			cookieBlock.classList.add('ativo')
+
+		}
+	</script>
+</body>
+
+</html>
+{% endspaceless %}

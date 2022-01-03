@@ -1,0 +1,29 @@
+<div class="breadcrumb">
+
+	<span class="breadcrumb-item">
+		<a href="/">Home</a>
+	</span>
+
+	<span class="icon-breadcrumb"></span>
+
+
+	{% for item in breadcrumb %}
+	<span class="breadcrumb-item">
+		<a href="{{ item.link}}" title="{{ item.name }}">
+			{{ item.name }}
+		</a>
+	</span>
+	{% if pages.current != "product" %}
+	<span class="icon-breadcrumb"></span>
+	{% endif %}
+	{% endfor %}
+
+
+	{% if category.name != "" %}
+	<span class="breadcrumb-item">{{ pages.current == 'catalog' ? category.name : '' }}</span>
+	{% else %}
+	<span class="breadcrumb-item">{{ pages.current == 'search' ? word : '' }}</span>
+	{% endif %}
+
+
+</div>

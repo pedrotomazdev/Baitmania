@@ -1,0 +1,47 @@
+/**
+ * Header
+ */
+ 
+.wrapper-nav{
+    background: #4b8cdc;
+    clear: both;
+}
+
+.wrapper-cart{
+    padding: 0;
+}
+
+.wrapper-logo{
+    text-align: center;
+}
+
+.trigger-menu{
+    background: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    padding: 19px 0;
+}
+
+.site-logo {
+    height: 220px;
+    display: inline-block;
+    font-size: 0;
+    text-align: center;
+    
+    &:before{
+        content: '';
+        display: inline-block;
+        height: 220px;
+        margin-right: -1%;
+        vertical-align: middle;
+        width: 1%;
+    }
+    
+    img{
+        display: inline-block;
+        max-height: 210px;
+        max-width: 99%;
+        vertical-align: middle;
+    }
+}

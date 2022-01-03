@@ -1,0 +1,157 @@
+<form name="form-filter" method="get" class="new-smart-filter">
+    <input type="hidden" name="loja" value="{{ store.id }}">
+    {% set type = "" %}
+    {% if search.word %}
+    <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+    {% endif %}
+
+    {% if category.id %}
+    <input type="hidden" name="categoria" value="{{ category.id }}">
+    {% endif %}
+
+    <h2 class="open-filters ">
+        <i class="visible-xs visible-sm pull-right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 459 459">
+                <path d="M178.5 382.5h102v-51h-102v51zM0 76.5v51h459v-51H0zM76.5 255h306v-51h-306v51z" fill="#a0a2a3" />
+            </svg>
+        </i>
+        Filtrar Mais
+    </h2>
+
+    <div class="filter filters-list">
+        {% if filter_options.categories %}
+        <section class="filter__block filter__block--categories">
+            <h4 class="filter__title" data-titlecat="categories">Categorias</h4>
+            <ul class="filter__list" data-tabcat="categories">
+                {% for lvl1 in categories %}
+
+                <li class="filter__item">
+                    <a href="{{lvl1.link}}" class="link-category">
+                        {{lvl1.name}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if filter_options.prices %}
+        <section class="filter__block filter__block--prices">
+            <h4 class="filter__title" data-titlecat="prices">Pre&#231;o</h4>
+            <ul class="filter__list" data-tabcat="prices">
+                {% for price in filter_options.prices.buckets %}
+                {% set price_applied = false %}
+
+                <li class="filter__item">
+                    {% for price_apply in filtered_options.price %}
+                    {% set price_applied = price.from and price.to in price_apply ? true : false %}
+                    {% endfor %}
+
+                    <input id="{{ price.from }}-{{ price.to }}" class="filter__input filter__input--price"
+                        type="checkbox" name="prices[]" value="{{ price.from }},{{ price.to }}" {{ price_applied
+                        ? 'checked' }}>
+                    <label class="filter__label" for="{{ price.from }}-{{ price.to }}">
+                        <span class="filter__name filter__name--price">
+                            {% if loop.index == 1 %}
+                            At&#233; {{ settings.currency }} {{ price.to|currency }}
+                            {% elseif loop.index == filter_options.prices.buckets|length %}
+                            Acima de {{ settings.currency }} {{ price.to|currency }}
+                            {% else %}
+                            De {{ settings.currency }} {{ price.from|currency }} &#224; {{ settings.currency }}{{
+                            price.to|currency }}
+                            {% endif %}
+                        </span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if filter_options.availability %}
+        <section class="filter__block filter__block--availability">
+            <h4 class="filter__title" data-titlecat="disponibilidades">Disponibilidade</h4>
+
+            <ul class="filter__list" data-tabcat="disponibilidades">
+                {% for availability in filter_options.availability %}
+                {% set availability_applied = availability.key in filtered_options.availability ? true : false %}
+
+                <li class="filter__item">
+                    <input id="{{ availability.key }}" class="filter__input filter__input--availability" type="checkbox"
+                        name="availability[]" value="{{ availability.key|convert_encoding('UTF-8', 'ISO-8859-1')}}" {{
+                        availability_applied ? 'checked' }}>
+                    <label class="filter__label" for="{{ availability.key }}">
+                        <span class="filter__name filter__name--availability">{{ availability.key }}</span>
+                        <span class="filter__text filter__text--count">({{ availability.doc_count }})</span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if filter_options.brands %}
+        <section class="filter__block filter__block--brands">
+            <h4 class="filter__title" data-titlecat="marcas">Marcas</h4>
+
+            <ul class="filter__list" data-tabcat="marcas">
+                {% for brand in filter_options.brands %}
+                {% set brands_applied = brand.key in filtered_options.brand ? true : false %}
+
+                <li class="filter__item">
+                    <input id="{{ brand.key }}" class="filter__input filter__input--brand" type="checkbox"
+                        name="brands[]" value="{{ brand.key|convert_encoding('UTF-8', 'ISO-8859-1') }}" {{
+                        brands_applied ? 'checked' }}>
+                    <label class="filter__label" for="{{ brand.key }}">
+                        <span class="filter__name filter__name--brand">{{ brand.key }}</span>
+                        <span class="filter__text filter__text--count">({{ brand.doc_count }})</span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if filter_options.properties %}
+        {% for properties in filter_options.properties %}
+        {% for prop in properties %}
+        <section class="filter__block filter__block--properties">
+            <h4 class="filter__title" data-titlecat="{{ prop.key }}">{{ prop.key }}</h4>
+            <ul class="filter__list" data-tabcat="{{ prop.key }}">
+                {% for item in prop.values %}
+
+                {% set filter_prop = prop.key ~'||'~ item.key %}
+                {% if item.entity == 'variants' %}
+                {% set prop_applied = filter_prop|convert_encoding('UTF-8', 'ISO-8859-1') in
+                filtered_options.variant ? true : false %}
+                {% else %}
+                {% set prop_applied = filter_prop|convert_encoding('UTF-8', 'ISO-8859-1') in
+                filtered_options.propertie ? true : false %}
+                {% endif %}
+
+                <li class="filter__item">
+                    <input id="{{ item.key }}" class="filter__input filter__input--propertie" type="checkbox"
+                        name="{{item.entity}}[]" value="{{ filter_prop|convert_encoding('UTF-8', 'ISO-8859-1') }}" {{
+                        prop_applied ? 'checked' }}>
+                    <label class="filter__label" for="{{ item.key }}">
+                        <span class="filter__name filter__name--propertie"> {#<img
+                                src="{{ item.image_color_secure }}">#} {{
+                            item.key }}</span>
+                        <span class="filter__text filter__text--count">({{ item.doc_count }})</span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        {% endfor %}
+
+        {% endfor %}
+        {% endif %}
+
+        <button type="submit" class="filter__button"
+            style="border-color:{{ settings.color_adicionar_carrinho }}; color:{{ settings.color_adicionar_carrinho }}">{{
+            Translation('filtrar') }}</button>
+
+    </div>
+</form>

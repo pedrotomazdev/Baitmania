@@ -1,0 +1,656 @@
+/**
+ * Cart
+ */
+
+// tabs
+.carrinho-tabs{
+    background: #fff;
+    margin: 30px 0;
+    padding: 20px 0;
+        
+    ol{
+        text-align: center;
+    }
+    
+    li{
+        display: inline-block;
+        margin-left: 6%;
+        vertical-align: top;
+        opacity: 0.5;
+        @include prefix('filter', 'grayscale(100%)');
+        
+        @media screen and (max-width: $sm){
+            display: none;
+            
+            &.active{
+                display: block;
+            }
+        }
+        
+        &.active{
+            opacity: 1;
+            @include prefix('filter', 'none');
+            filter: none;
+        }
+        
+        &:first-child{
+            margin-left: 0;
+        }
+        
+        &:nth-child(1){
+            
+            .passo-num:before{
+                background-position: 0 0;
+                content: '';
+            }
+        }
+        
+        &:nth-child(2){
+            
+            .passo-num:before{
+                background-position: -25px 0;
+                content: '';
+            }
+        }
+        
+        &:nth-child(3){
+            
+            .passo-num:before{
+                background-position: -47px 0;
+                content: '';
+            }
+        }
+        
+        &:nth-child(4){
+            
+            .passo-num:before{
+                background-position: -73px 0;
+                content: '';
+            }
+        }
+    }
+    
+    .passo-desc{
+        display: none;
+    }
+    
+    .passo-num{
+        color: #00468b;
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: 400;
+        
+        &:before{
+            background: url('../img/cart-tab.png');
+            background-repeat: no-repeat;
+            display: inline-block;
+            height: 17px;
+            margin-right: 5px;
+            vertical-align: top;
+            width: 20px;
+        }
+        
+        &:after{
+            content: '.';
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    
+    .passo-text{
+        color: #00468b;
+        display: inline;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
+
+// page
+.page-checkout_cart{
+    
+    .container.caixa-produto + .container,
+    .Seguro,
+    .AvancarTopo,
+    .AvancarTopo + .botao-prosseguir-compra{
+        display: none;
+    }
+    
+    .AvancarTopo + .bt-avancar,
+    .bt-continuar-comprando + .bt-avancar{
+        line-height: 0;
+        margin-bottom: 20px;
+        
+        @media screen and (max-width: $sm){
+            display: block;
+            float: none;
+            text-align: center;
+        }
+    }
+    
+    .caixa-produto{
+        padding: 0;
+        width: 100%;
+    }
+    
+    #cesta_produtos{
+        margin: 0;
+        
+        > .board:first-child{
+            font-size: 0;
+        }
+    }
+    
+    #tabela_carrinho{
+        background: #fff;
+        border-radius: 3px 3px 3px 3px;
+        margin: 0;
+        
+        @media screen and (max-width: $sm){
+            background: none;
+        }
+        
+        tr{
+            background: #fff;
+            position: relative;
+            
+            @media screen and (max-width: $sm){
+                display: block;
+                margin-bottom: 15px;
+                padding: 15px;
+                
+                &:first-child{
+                    display: none;
+                }
+            }
+            
+            &:last-child td{
+                border-bottom: none;
+            }
+        }
+        
+        th{
+            border: none;
+            font-size: 1.5rem;
+            padding: 0 30px;
+            white-space: nowrap;
+            
+            @media screen and (max-device-width: 1024px){
+                padding: 0 15px;
+            }
+            
+            &:first-child{
+                padding: 10px 40px 17px 160px;
+            }
+            
+            &:last-child{
+                padding: 17px 40px 17px 32px;
+            }
+        }
+        
+        td{
+            border-top: none;
+            border-bottom: dotted 1px #e8e8e8;
+            padding: 25px 0 30px;
+            
+            &:first-child{
+                padding: 10px 40px 17px 32px;
+                    
+                img{
+                    border: none;
+                }
+            }
+            
+            &:nth-child(2) ~ td{
+                text-align: center;
+            }
+            
+            @media screen and (max-width: $sm){
+                border-bottom: none;
+                border-top: none;
+                display: block;
+                padding: 0;
+                text-align: left;
+                
+                &:nth-child(1){
+                    float: left;
+                    padding: 10px 0;
+                    text-align: center;
+                    width: 40%;
+                }
+                
+                &:nth-child(2){
+                    margin-bottom: 20px;
+                    overflow: hidden;
+                }
+                
+                &:nth-child(3){
+                    clear: left;
+                    float: left;
+                    width: 40%;
+                }
+                
+                &:nth-child(4){
+                    float: left;
+                    text-align: left;
+                    width: 60%;
+                    
+                    &:before{
+                        content: 'Valor uni.';
+                    }
+                }
+                
+                &:nth-child(5){
+                    float: left;
+                    text-align: left;
+                    width: 60%;
+                    
+                    h3{
+                        display: inline;
+                    }
+                    
+                    &:before{
+                        content: 'Valor total';
+                    }
+                }
+                
+                &:last-child{
+                    clear: both;
+                }
+            }
+        }
+        
+        a strong{
+            color: #3d4445;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 20px;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+        }
+        
+        h5{
+            color: #3d4445;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 20px;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+        }
+        
+        .qntd{
+            border: solid 1px #bcc0bd;
+            font-weight: normal;
+            height: 30px;
+            text-align: center;
+            width: 38px;
+        }
+        
+        .refresh{
+            background: url("../img/refresh.png?1") no-repeat center top;
+            cursor: pointer;
+            display: block;
+            height: 20px;
+            margin: 5px auto 0;
+            width: 20px;
+            
+            &:after{
+                display: none;
+            }
+            
+            img{
+                display: none;
+            }
+        }
+        
+        .bt-excluir{
+            background: url('../img/remove.png?1') no-repeat center top;
+            cursor: pointer;
+            display: block;
+            height: 12px;
+            margin: 2px 0 0;
+            width: 12px;
+            
+            @media screen and (max-width: $sm){
+                background-color: #fff;
+                background-position: center;
+                border-radius: 10px;
+                border: 1px solid #3D4445;
+                padding: 10px;
+                position: absolute;
+                right: -5px;
+                top: -5px;
+            }
+            
+            img{
+                display: none;
+            }
+            
+            @media screen and (max-width: $sm){
+                margin: 0 auto;
+            }
+        }
+        
+        .valores_carrinho{
+            color: #3d4445 !important;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
+    
+    div.bt-continuar-comprando{
+        
+        @media screen and (max-width: $sm){
+            display: block;
+            margin-bottom: 20px;
+            position: static;
+            right: 0;
+            text-align: center;
+            width: 100%;
+        }
+    
+        a{
+            float: none;
+            font-size: 14px;
+        }
+    
+        
+        img{
+            display: block;
+        }
+    }
+    
+    .caixa-frete{
+        display: none;
+    }
+    
+    .caixa-forma-frete{
+        margin-top: 20px;
+        
+        tr{
+            display: block;
+            overflow: hidden;
+        }
+        
+        th{
+            display: block;
+        }
+        
+        td{
+            float: left;
+            
+            // prazo de entrega
+            @media screen and (max-device-width: 1024px){
+                &:nth-child(3){
+                    display:block !important;
+                }
+            }
+        }
+        
+        input[type="tel"],
+        #cupon{
+            border: solid 1px #bcc0bd;
+            color: #3d4445;
+            font-size: 1.5rem;
+            font-weight: 400;
+            height: 30px;
+            padding: 0 10px;
+            text-align: center;
+            
+            @media screen and (max-width: $sm){
+                padding: 0;
+            }
+        }
+        
+        .bt-cep{
+            margin-top: 4px;
+            
+            @media screen and (max-width: $sm){
+                display: inline-block;
+            }
+        }
+        
+        .botao-simular-frete{
+            display: inline-block;
+            margin-left: 10px;
+            padding: 9px;
+            vertical-align: top;
+        }
+        
+        .carFretePara{
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 400;
+            padding: 10px 0;
+        }
+        
+        #formas_envio_frete{
+            padding-left: 30px;
+            width: 800px;
+            
+            @media screen and (max-device-width: 1024px){
+                padding-left: 0;
+                width: 100%;
+            }
+        }
+        
+        #calculoFrete{
+            
+            label{
+                color: #3d4445;
+                display: inline-block;
+                font-size: 1.6rem;
+                line-height: 1.6rem;
+                vertical-align: middle;
+            }
+            
+            @media screen and (max-width: $sm){
+                input{
+                    margin: 0 3px;
+                }
+            }
+        }
+        
+        .blocoAlerta{
+            margin: 20px 0;
+        }
+        
+        .caixa-cupom{
+            
+            label{
+                color: #3d4445;
+                display: inline-block;
+                font-size: 1.6rem;
+                line-height: 14px;
+                vertical-align: middle;
+            }
+            
+            .botao-cupom-desconto{
+                display: inline-block;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                padding: 9px;
+                vertical-align: top;
+            }
+            
+            .blocoSucesso{
+                margin: 0 0 15px;
+            }
+        }
+        
+        #tab{
+
+            td{
+                color: #3d4445;
+                font-size: 1.6rem;
+                line-height: 14px;
+                padding: 5px;
+                vertical-align: top;
+                
+                &:first-child{
+                    min-width: 150px;
+                }
+                
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(3){
+                    width: auto;
+                    
+                    @media screen and (max-width: $sm){
+                        display: block;
+                        padding-left: 15px;
+                        text-align: left;
+                    }
+                }
+                
+                &:nth-child(2){
+                    text-align: left;
+                    width: 140px;
+                }
+                
+                &:nth-child(3){
+                    margin-top: 0;
+                    
+                    @media screen and (max-device-width: 1024px){
+                        display: none;
+                    }
+                }
+            }
+            
+            a{
+                color: #3d4445;
+            }
+            
+            label{
+                color: #3d4445;
+                display: inline-block;
+                font-size: 14px;
+                vertical-align: top;
+            }
+        }
+    }
+    
+    .frete-wrapper,
+    .cupom-wrapper{
+        clear: both;
+        float: right;
+        
+        @media screen and (max-width: $sm){
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    .cupom-wrapper{
+        
+        @media screen and (max-width: $sm){
+            padding-top: 30px;
+        }
+        
+        @media screen and (max-width: 404px){            
+            .botao-commerce{
+                margin-top: 15px;
+            }
+        }
+    }
+    
+    .frete-wrapper{
+        
+        + tr{
+            
+            > td > h3{
+                display: none;
+            }
+        }
+    }
+    
+    .caixa-total{
+        margin-bottom: 20px;
+        
+        .tit-total{
+            display: none;
+        }
+        
+        table{
+            margin: 0;
+        }
+        
+        tr{
+            background: none;
+            border: none;
+        }
+        
+        th{
+            border: none !important;
+            font-size: 0;
+            padding: 0 !important;
+            
+            &:nth-child(2){
+                text-align: right;
+                width: 50%;
+            }
+            
+            &:last-child{
+                width: 1px;
+            }
+        }
+        
+        h3{
+            color: #3d4445 !important;
+            font-size: 30px;
+            font-weight: 400;
+            white-space: nowrap;
+            
+            div{
+                color: #3d4445 !important;
+                font-weight: 400;
+            }
+            
+            &:before{
+                color: #3d4445 !important; 
+                content: 'Total: ';
+                text-transform: none;
+            }
+        }
+    }
+    
+    .caixa-botoes{
+        margin-bottom: 30px;
+        
+        .botao-commerce-img{
+            color: #fff !important;
+        }        
+        
+        .botao-commerce{
+            font-size: 1.4rem;
+            padding: 9px 25px;
+            
+            @media screen and (max-width: $sm){
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+    
+    #Body{
+        @media screen and (max-width: $sm){
+            min-width: auto;
+        }
+        
+    }
+    
+    .light_altura {
+        line-height: 1;
+
+        >h3 {
+            font-size: 2.4rem;
+        }    
+    }
+    
+    #lightwindow{
+        p{
+            font-size: 2rem;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.page-newsletter {
+    
+    .Seguro {
+        display: none;
+    }
+    
+    .page-content {
+        background: #fff; 
+        padding: 30px;
+    } 
+    
+    h1.color {
+        text-transform: uppercase;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    }
+    
+    p {
+        color: #666;
+        @include typo(1.3rem, 400, $font, 1.3rem);
+        margin-top: 30px;
+    }
+    
+    .board {
+        color: #666;
+        @include typo(1.3rem, 400, $font, 1.3rem);
+        margin-top: 30px;
+    }
+} 

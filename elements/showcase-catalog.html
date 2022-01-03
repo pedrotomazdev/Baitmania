@@ -1,0 +1,26 @@
+{% if products|length > 0 %}
+    
+    {% if not settings.enable_filter %}
+        <div class="showcase-catalog clearfix col-sm-12" itemscope itemtype="https://schema.org/SomeProducts">
+            <ul class="row">
+            {% for product in products %}
+                {% set ranking = product.ranking %}
+                <li class="product col-sm-3 {{ settings.radio_cols_mobile }}">
+                    {% element 'snippets/product' {"product": product} %}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <div class="showcase-catalog clearfix col-sm-9" itemscope itemtype="https://schema.org/SomeProducts">
+            <ul class="row">
+            {% for product in products %}
+                {% set ranking = product.ranking %}
+                <li class="product col-sm-4 {{ settings.radio_cols_mobile }}">
+                    {% element 'snippets/product' {"product": product} %}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endif %}

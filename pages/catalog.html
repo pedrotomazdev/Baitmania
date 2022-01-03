@@ -1,0 +1,95 @@
+<div class="catalog-header">
+	<div class="meta-tags">
+		<h1 class="catalog-name">{{ category.name }}</h1>
+
+		{% if category.small_description %}
+		<div class="category-description">
+			{{ category.small_description }}
+		</div>
+		{% endif %}
+	</div>
+
+	{% if products|length > 0 %}
+
+	{% element 'snippets/breadcrumb' %}
+
+	{% endif %}
+
+
+</div>
+
+{% if products|length > 0 %}
+
+<div class="catalog-content">
+	<div class="col-md-3 col-xs-12">
+		{% element 'sidebar-left' %}
+	</div>
+	<div class="col-md-9 col-xs-12">
+		<div class="header-catalog-content">
+			<div class="vitrine-home">
+				<div class="vitrine-content">
+					<div class="vitrine-title">
+						<h2 style="color:{{ settings.color_divisoria }}">{{ category.name }}</h2>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="count-prods">
+				{{ paginate.counter('Produtos encontrados <b>{:count}</b>') }}
+			</div>
+			<div class="mini-filter">
+				<form class="catalogo-form-filtros" data-form="filter">
+					<input name="loja" type="hidden" value="{{store.id}}">
+					<input name="palavra_busca" type="hidden" value="">
+					<label class="filtros filtro-ordem">
+						<span>Ordenar por:</span>
+						<select name="order" id="select_ordem" class="select">
+							<option value="7">Nome do Produto</option>
+							<option value="1">Menor Pre&#x00E7;o</option>
+							<option value="2">Maior Pre&#x00E7;o</option>
+							<option value="3">Mais Vendido</option>
+							<option value="4">Destaque</option>
+							<option value="5">Lan&#x00E7;amento</option>
+						</select>
+						<i class="icon-select">
+							<svg xmlns="http://www.w3.org/2000/svg" width="15.01" height="8.212" viewbox="0 0 15.01 8.212">
+								<path id="Caminho_246" data-name="Caminho 246" d="M3553.286,260l7.152,7.152,7.152-7.152"
+									transform="translate(-3552.932 -259.646)" fill="none" stroke="#fcbd16" stroke-width="1" />
+							</svg>
+						</i>
+					</label>
+					<input type="hidden" name="categoria" value="{{category.id}}">
+				</form>
+			</div>
+		</div>
+		<div class="content-catalog-product">
+			{% for product in products %}
+			{% set ranking = product.ranking %}
+			<div class="col-md-4 col-xs-6 col-sm-4">
+				{% element 'snippets/product' {"product": product} %}
+			</div>
+			{% endfor %}
+		</div>
+		<div class="catalog-footer">
+			{% element 'snippets/pagination' %}
+		</div>
+	</div>
+
+</div>
+
+
+{% else %}
+
+<div class="catalog-empty">
+	<img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+	<p>Nenhum produto encontrado nessa categoria.</p>
+</div>
+
+{% endif %}
+
+{% if banner.bottom %}
+<div class="banner banner-bottom">
+	{{ banner.bottom }}
+</div>
+{% endif %}

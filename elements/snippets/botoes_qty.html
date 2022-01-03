@@ -1,0 +1,32 @@
+{% if product.available %}
+<div class="clearfix wrapper-btn-buy">
+    <div data-app="product.quantity" class="product-quantity clearfix">
+        <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
+        <div>
+            <span id="minus" ty onclick="process(1)"></span>
+            <span id="plus" onclick="process(-1)"></span>
+        </div>
+    </div> 
+    
+    {% set attribute = 'data-url="/loja/termo_aceite.php?loja='~store.id~'&idProduto='~product.id~'&store=1" data-title="TERMO DE ACEITA&Ccedil;&Atilde;O" data-modal-width="700px" data-modal-height="400px" data-toggle="modal" data-target="#modal-form"' %}
+    
+    {% if not Image('buy') %}
+    <button type="submit" class=".botao-comprar" {{ product.has_acceptance_terms == 1 ? attribute }}>
+        <i class="cart-icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23" height="22" viewBox="0 0 25.621 25.601" enable-background="new 0 0 25.621 25.601" xml:space="preserve"><path d="M25.597,0.605c-0.105-0.426-0.539-0.687-0.969-0.582l-3.203,0.801c-0.313,0.078-0.547,0.336-0.598,0.652l-0.406,2.567L0.702,6.406C0.687,6.41,0.675,6.418,0.659,6.422c-0.019,0.003-0.035,0-0.055,0.003C0.558,6.438,0.522,6.465,0.483,6.48C0.437,6.5,0.394,6.515,0.354,6.543C0.3,6.583,0.253,6.629,0.21,6.679C0.187,6.708,0.155,6.718,0.136,6.746C0.132,6.754,0.132,6.761,0.128,6.77C0.085,6.836,0.061,6.91,0.038,6.988C0.03,7.015,0.015,7.04,0.011,7.066c-0.016,0.109-0.016,0.219,0.011,0.328l2.403,9.602l0.801,3.199c0.003,0.022,0.019,0.043,0.027,0.063c0.012,0.039,0.031,0.074,0.047,0.109c0.027,0.055,0.062,0.101,0.097,0.144c0.024,0.032,0.051,0.055,0.079,0.082c0.046,0.043,0.097,0.075,0.152,0.106c0.031,0.016,0.055,0.034,0.086,0.047c0.09,0.031,0.187,0.054,0.285,0.054h16.82c0.441,0,0.797-0.359,0.797-0.8c0-0.442-0.355-0.801-0.797-0.801H4.624l-0.398-1.599h14.992c0.098,0,0.191-0.019,0.281-0.051c0.035-0.015,0.063-0.039,0.094-0.058c0.051-0.024,0.102-0.047,0.145-0.082c0.031-0.027,0.051-0.067,0.082-0.099c0.031-0.039,0.07-0.073,0.098-0.121c0.023-0.043,0.031-0.09,0.047-0.137c0.016-0.043,0.035-0.082,0.047-0.125l0.004-0.019v-0.009L22.327,2.25l2.688-0.672C25.444,1.468,25.706,1.035,25.597,0.605L25.597,0.605z M3.823,16L1.792,7.886L4.276,7.59L5.479,16H3.823z M7.097,16L5.866,7.398l2.496-0.297L8.769,16H7.097z M12.042,16h-1.668L9.956,6.91l2.496-0.301L12.042,16z M15.308,16h-1.661l0.415-9.582l2.48-0.297L15.308,16z M18.515,16h-1.594l1.262-10.078l1.703-0.204L18.515,16z M7.202,22.398c-0.883,0-1.601,0.72-1.601,1.603c0,0.886,0.718,1.601,1.601,1.601c0.887,0,1.602-0.718,1.602-1.601S8.089,22.398,7.202,22.398L7.202,22.398z M17.616,22.398c-0.887,0-1.602,0.72-1.602,1.603c0,0.886,0.715,1.601,1.602,1.601c0.883,0,1.602-0.718,1.602-1.601S18.499,22.398,17.616,22.398L17.616,22.398z M17.616,22.398"/></svg>
+        </i>
+        <span>Comprar</span>
+    </button>
+    {% else %}
+    <div data-app="product.buy-button" id="bt_comprar" class="remove-bg" align="left">
+        <button id="button-buy" data-tray-tst="button_buy_product" type="submit" {{ product.has_acceptance_terms == 1 ? attribute }}>
+            {{ Image('buy') }}
+        </button>
+    </div>
+    {% endif %}
+    
+    <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">Selecione uma op&ccedil;&atilde;o das varia&ccedil;&otilde;es do produto</span>
+</div>
+<script type="text/javascript">function process(quant){var value = parseInt(document.getElementById("quant").value);value+=quant;if( value > 0){document.getElementById("quant").value = value;	}} </script>
+
+{% endif %}

@@ -1,0 +1,64 @@
+.new-smart-filter{
+    .filter{
+        &__block{
+            margin: 10% 0;
+            &--properties{
+                overflow:auto;
+                max-height: 385px;
+
+                &::-webkit-scrollbar{
+                    background: transparent;
+                    width: 10px;
+                }
+
+                &::-webkit-scrollbar-thumb{
+                    background-color: #ccc;
+                }
+            }
+        }
+
+        &__item{
+            input{
+                min-width: 0 !important;
+            }
+        }
+        
+        &__title{
+            font-size: 1.5rem;
+            padding: 5% 0;
+        }
+
+        &__list{
+            font-size: 1.3rem;
+        }
+
+        &__label{
+            padding-left: 5%;
+        }
+
+        &__text{
+            &--count{
+                font-size: 1rem;
+                color: #a2a2a2;
+                padding: 5px;
+            }
+        }
+
+        &__button{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            font-size: 1.7rem;
+            background-color: #525252;
+            color: #fff;
+        }
+        &__name{
+            img{
+                border-radius: 19px;
+                margin: 5px 0;
+
+            }
+        }
+
+    }
+}

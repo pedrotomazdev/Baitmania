@@ -1,0 +1,213 @@
+{# variaveis #}
+{% set categories = Categories() %}
+{# Fim #}
+<nav class="nav-maneiro">
+
+	<div class="container">
+		<div class="col-md-12">
+			<div class="nav-content">
+				{% if categories|length >= 10 %}
+					<div class="lvl1 {% if lvl1.children %}hover-overlay{% endif %}">
+						<a href="#" class="lvl1-link">
+							<h2 class="wrap-space">Departamentos
+								<i class="fas fa-chevron-down"></i>
+							</h2>
+						</a>
+						<div class="prods-categories all-categories">
+							<div class="categories-header">
+								<div class="title">
+									<h2>
+										<i>
+											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="20" height="20" x="0" y="0" viewbox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+												<g>
+													<g xmlns="http://www.w3.org/2000/svg" id="Arrow_Outline" data-name="Arrow Outline">
+														<path d="m29.3107 7.6318-3.6069-4.5085a1.67 1.67 0 0 0 -1.3038-.6268h-.0028a1.5326 1.5326 0 0 0 -1.2687 2.3935l1.1725 1.7418h-20.2868a1.5 1.5 0 1 0 0 3h20.2865l-1.1722 1.7419a1.5326 1.5326 0 0 0 1.2683 2.3931h.0032a1.67 1.67 0 0 0 1.3042-.6269l3.6069-4.5086a.8.8 0 0 0 -.0004-.9995z" fill="#ff7a01" data-original="#000000" style="" class=""></path>
+														<path d="m28 19.4678h-24a1.5 1.5 0 0 1 0-3h24a1.5 1.5 0 0 1 0 3z" fill="#ff7a01" data-original="#000000" style="" class=""></path>
+														<path d="m27.9526 28.3037h-23.9052a1.5 1.5 0 0 1 0-3h23.9052a1.5 1.5 0 0 1 0 3z" fill="#ff7a01" data-original="#000000" style="" class=""></path>
+													</g>
+												</g>
+											</svg>
+										</i>
+										<strong>Todos os Departamentos</strong>
+									</h2>
+								</div>
+							</div>
+
+							<div class="categories-body">
+								{% for lvl1 in categories %}
+									{% if lvl1.id != 21 %}
+
+										<div class="lvl2 lvl2-all">
+											<a href="{{ lvl1.link }}">
+												<h2>
+													<i>
+														<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="10" height="10" x="0" y="0" viewbox="0 0 494.148 494.148" style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+															<g>
+																<g xmlns="http://www.w3.org/2000/svg">
+																	<g>
+																		<path d="M405.284,201.188L130.804,13.28C118.128,4.596,105.356,0,94.74,0C74.216,0,61.52,16.472,61.52,44.044v406.124    c0,27.54,12.68,43.98,33.156,43.98c10.632,0,23.2-4.6,35.904-13.308l274.608-187.904c17.66-12.104,27.44-28.392,27.44-45.884    C432.632,229.572,422.964,213.288,405.284,201.188z" fill="#ff7a01" data-original="#000000" style="" class=""></path>
+																	</g>
+																</g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+																<g xmlns="http://www.w3.org/2000/svg"></g>
+															</g>
+														</svg>
+													</i>
+													{{ lvl1.name }}
+												</h2>
+											</a>
+										</div>
+									{% endif %}
+								{% endfor %}
+
+							</div>
+						</div>
+					</div>
+
+					{% for lvl1 in categories %}
+
+						{% if loop.index <= 10 %}
+							<div class="lvl1 {% if lvl1.children %}hover-overlay{% endif %}">
+								<a href="{{ lvl1.link }}" class="lvl1-link">
+									{% if lvl1.images[0] %}
+										<i class="icon-category">
+											<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+										</i>
+									{% endif %}
+									<h2>{{ lvl1.name }}</h2>
+								</a>
+								{% if lvl1.children %}
+									<div class="prods-categories">
+										<div class="categories-header">
+											<div class="title">
+												<h2>
+													{% if lvl1.images[0] %}
+														<i>
+															<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+														</i>
+													{% endif %}
+
+													<strong>{{lvl1.name}}</strong>
+												</h2>
+											</div>
+
+										</div>
+
+										<div class="categories-body">
+											{% for lvl2 in lvl1.children %}
+												{% if('-' in lvl2.name) %}
+
+													{% else %}
+														<div class="lvl2">
+
+															<a href="{{ lvl2.link }}" class="lvl2-link">
+																<h2>
+																	<i>
+																		<svg xmlns="http://www.w3.org/2000/svg" viewbox="165.116 0 369.767 700" width="50" height="50" class="slick-arrow arrow-next">
+																			<path d="M529.18,336.045L198.966,5.831c-7.774-7.775-20.244-7.775-28.019,0c-7.775,7.775-7.775,20.244,0,28.019l316.131,316.131L170.948,666.113c-7.775,7.774-7.775,20.244,0,28.019c3.813,3.814,8.948,5.868,13.936,5.868c4.988,0,10.122-1.907,13.937-5.868l330.214-330.214C536.809,356.289,536.809,343.674,529.18,336.045z"></path>
+																		</svg>
+																	</i>
+																	{{ lvl2.name }}
+																</h2>
+															</a>
+
+															{% if lvl2.children %}
+																{% for lvl3 in lvl2.children %}
+																	<div class="lvl3">
+																		<a href="{{ lvl3.link }}" class="lvl3-link">
+																			<h2>{{ lvl3.name }}</h2>
+																		</a>
+																	</div>
+																{% endfor %}
+															{% endif %}
+														</div>
+												{% endif %}
+											{% endfor %}
+
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					{% for lvl1 in categories %}
+
+						<div class="lvl1 {% if lvl1.children %}hover-overlay{% endif %}">
+							<a href="{{ lvl1.link }}" class="lvl1-link">
+								{% if lvl1.images[0] %}
+									<i class="icon-category">
+										<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+									</i>
+								{% endif %}
+								<h2>{{ lvl1.name }}</h2>
+							</a>
+							{% if lvl1.children %}
+								<div class="prods-categories">
+									<div class="categories-header">
+										<div class="title">
+											<h2>
+												{% if lvl1.images[0] %}
+													<i>
+														<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+													</i>
+												{% endif %}
+												<strong>{{lvl1.name}}</strong>
+											</h2>
+										</div>
+
+									</div>
+
+									<div class="categories-body">
+										{% for lvl2 in lvl1.children %}
+
+											<div class="lvl2">
+
+												<a href="{{ lvl2.link }}" class="lvl2-link">
+													<h2>
+														<i>
+															<svg xmlns="http://www.w3.org/2000/svg" viewbox="165.116 0 369.767 700" width="50" height="50" class="slick-arrow arrow-next">
+																<path d="M529.18,336.045L198.966,5.831c-7.774-7.775-20.244-7.775-28.019,0c-7.775,7.775-7.775,20.244,0,28.019l316.131,316.131L170.948,666.113c-7.775,7.774-7.775,20.244,0,28.019c3.813,3.814,8.948,5.868,13.936,5.868c4.988,0,10.122-1.907,13.937-5.868l330.214-330.214C536.809,356.289,536.809,343.674,529.18,336.045z"></path>
+															</svg>
+														</i>
+														{{lvl2.name }}
+													</h2>
+												</a>
+												{% if lvl2.children %}
+													{% for lvl3 in lvl2.children %}
+														<div class="lvl3">
+															<a href="{{ lvl3.link }}" class="lvl3-link">
+																<h2>{{ lvl3.name }}</h2>
+															</a>
+														</div>
+													{% endfor %}
+												{% endif %}
+											</div>
+										{% endfor %}
+
+									</div>
+								</div>
+							{% endif %}
+
+
+						</div>
+
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</nav>

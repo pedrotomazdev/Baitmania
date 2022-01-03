@@ -1,0 +1,65 @@
+<div class="product-price">
+	{% if not product.available %}
+	<p class="product-price">Indispon&iacute;vel</p>
+	{% elseif product.stock <= 0 and settings.without_stock_sale <=0%} <p class="product-price">Esgotado</p>
+		{% elseif product.upon_request %}
+		<p class="product-price">Sob Consulta</p>
+		{% else %}
+		<div class="product-price price-content {{ settings.price_before_style }}" itemprop="offers" itemscope
+			itemtype="http://schema.org/Offer">
+			{% if product.price_offer > 0 %}
+			<span class="price-before">
+				<span class="old-text">De:
+				</span>
+				{{ settings.price_before_style != 'strike' ? '' }}
+				<div class="moeda-valor">
+					<span class="moeda">{{ settings.currency }}
+					</span>
+					<span class="price">{{ product.price|currency }}</span>
+				</div>
+
+			</span>
+			{% endif %}
+
+			{% if settings.store_main_price_boleto %}
+			<div class="price-offer price-payment">{{ product.payment }}</div>
+			{% else %}
+			{% set price = product.price_offer > 0 ? product.price_offer : product.price %}
+
+			<span class="price-offer">
+				<span class="old-text">Por:
+				</span>
+				<div class="valor-real" style="color:{{ settings.color_secundaria }}">
+					<span itemprop="priceCurrency" content="BRL">{{ settings.currency }}
+					</span>
+					<span itemprop="price" content="{{ price }}">{{ price|currency }}</span>
+				</div>
+			</span>
+
+			{% endif %}
+		</div>
+
+		{% if product.payment %}
+
+		<div class="calculado">
+			<span class="price-calculed">
+				{% for payment in product.payment_option_details %}
+				{% if loop.index == product.payment_option_details|length %}
+				<span class="text-calculado">
+					em {{payment.plots}}x de
+				</span>
+				<span itemprop="priceCurrency" content="BRL">{{ settings.currency }}
+				</span>
+				<span itemprop="price" content="{{ payment.value }}">{{ payment.value|currency }}
+				</span>
+				<span class="text-calculado">
+					sem juros
+				</span>
+				{% endif %}
+				{% endfor %}
+			</span>
+		</div>
+		{% endif %}
+
+		{% endif %}
+</div>

@@ -1,0 +1,245 @@
+</main>
+
+<main id="main-product">
+
+	<div class="container">
+		{% element 'snippets/breadcrumb' %}
+		<section class="nome_produto">
+			<div class="info-prod">
+				<h1 class="product-name">{{product.name}}</h1>
+			</div>
+		</section>
+		<section id="section-product">
+			<div class="content-gallery">
+				{% set images = product.images %}
+
+				<div class="box-image">
+					{% if images %}
+					<img class="img-produto" id="zoom" src="{{ images[0].full }}" alt="{{ product.name }}"
+						data-zoom-image="{{ images[0].full }}" data-js="image-big">
+					{% else %}
+					<img src="{{ asset('img/noimage.svg') }}">
+					{% endif %}
+
+					{% if product.video %}
+					<div id="videoManeiro">
+						<iframe id="iframePrincipal" src="{{ product.video }}"></iframe>
+					</div>
+
+					{% endif %}
+				</div>
+				<div class="box-slick">
+					{% for image in images %}
+					<div class="slick-item">
+						<div class="content-item">
+							<img src="{{ image.full }}" alt="{{ product.name }}" data-zoom-image="{{ images[0].full }}"
+								data-js="slide-image">
+						</div>
+					</div>
+
+					{% endfor %}
+
+					{% if product.video %}
+					<div class="slick-item" id="slickIframe">
+						<div class="content-item">
+							<iframe id="iframeSlickManeiro" src="{{ product.video }}"></iframe>
+						</div>
+					</div>
+
+					{% endif %}
+				</div>
+			</div>
+
+			<div class="content-product-info">
+				{% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
+				{% if porcentagemDesconto < 100 %} <span class="discount">
+					<i>
+						<img src="{{asset('img/tag_desconto.png')}}" alt="Desconto de {{ porcentagemDesconto|number_format }}%">
+					</i>
+					{{ porcentagemDesconto|number_format }}%
+					</span>
+					{% endif %}
+					<div class="prod-rank">
+						<div class="estrelas">
+							{% set arrayRating = [1,2,3,4,5] %}
+							{% set nota = product.ranking %}
+							{% for rating in arrayRating %}
+							{% if nota.rating >= rating %}
+							<span class="fas fa-star voto votado"></span>
+
+							{% else %}
+							<span class="fas fa-star voto"></span>
+							{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+
+					<div class="combo-compra">
+						<form id="form_comprar" method="post" data-app="product.buy-form"
+							action="{{ links.cart_add ~ product.id }}">
+
+							{% element 'snippets/price' {'product': product} %}
+
+
+
+							<div class="varitants-ciru">
+								{{ productHelper.variants() }}
+							</div>
+							<div class="final-box">
+								<span id="span_erro_carrinho" class="blocoAlerta" style="display: none;">Selecione uma
+									op&#x00E7;&#x00E3;o para varia&#x00E7;&#x00E3;o do produto</span>
+							</div>
+							<div class="btn-final">
+								<button class="fim-compra" id="button-buy2" type="submit" data-tray-tst="button_buy_product"
+									style="border-color:{{ settings.color_adicionar_carrinho }};">
+									<i class="icon-button">
+										<svg xmlns="http://www.w3.org/2000/svg" width="17.493" height="15" viewbox="0 0 17.493 15">
+											<path id="Carrinho_de_compras" data-name="Carrinho de compras"
+												d="M-4665.585-461.916a1.607,1.607,0,0,1,1.629-1.586,1.609,1.609,0,0,1,1.628,1.586,1.608,1.608,0,0,1-1.629,1.586A1.607,1.607,0,0,1-4665.585-461.916Zm-5.288,0a1.608,1.608,0,0,1,1.628-1.586,1.61,1.61,0,0,1,1.629,1.586,1.608,1.608,0,0,1-1.629,1.586A1.608,1.608,0,0,1-4670.873-461.916Zm8.606-3.02h-8.119a1.807,1.807,0,0,1-1.765-1.353l-1.9-7.564a1.261,1.261,0,0,0-1.233-.943h-.952a.271.271,0,0,1-.274-.267.271.271,0,0,1,.274-.267h.952a1.8,1.8,0,0,1,1.765,1.345l.266,1.054h13.963a.281.281,0,0,1,.214.106.272.272,0,0,1,.053.231l-1.473,6.279a1.8,1.8,0,0,1-1.768,1.379Z"
+												transform="translate(4676.508 475.329)" fill="#fff" />
+										</svg>
+									</i>
+									Adicionar ao Carrinho
+								</button>
+							</div>
+						</form>
+
+					</div>
+
+
+					{% if productHelper.shipping() %}
+					<div class="box-frete box">
+						{{ productHelper.shipping() }}
+						<h2>
+							<i class="icon-title">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20.277" height="12" viewbox="0 0 20.277 12">
+									<path id="Caminho_143" data-name="Caminho 143"
+										d="M14.455.119c1.758.408,2.431,1.436,3.274,2.851H14.455ZM4.181,3.089a.522.522,0,0,1,.594.554.594.594,0,0,1-.592.594H.594a.594.594,0,0,0,0,1.188H5.94a.594.594,0,1,1,0,1.188H.594a.594.594,0,1,0,0,1.188H1.9V9.584a.594.594,0,0,0,.594.594H3.689a2.278,2.278,0,0,0,4.463,0h6.032a2.278,2.278,0,0,0,4.463,0h1.036a.594.594,0,0,0,.594-.594V6.02a1.917,1.917,0,0,0-1.84-1.861H13.861a.594.594,0,0,1-.594-.594V0H2.495A.594.594,0,0,0,1.9.594V1.9H1.188a.594.594,0,0,0,0,1.188Zm13,5.864a1.089,1.089,0,1,1-1.859.77A1.089,1.089,0,0,1,17.185,8.953Zm-10.5,0a1.089,1.089,0,1,1-1.859.77A1.089,1.089,0,0,1,6.69,8.953Zm0,0"
+										transform="translate(0 0)" fill="#6d6e70" fill-rule="evenodd" />
+								</svg>
+							</i>
+							Informe o CEP para consultar:
+						</h2>
+						<form class="new-frete">
+							<label class="box-left">
+								<input type="tel" class="crazy_cep" name="number-frete" minlength="9" required maxlength="9"
+									placeholder="00000-000">
+								<button class="submit-frete"
+									style="border-color:{{ settings.color_adicionar_carrinho }}; color:{{ settings.color_adicionar_carrinho }}">Calcular</button>
+							</label>
+						</form>
+
+						<div id="recebeEndereco"></div>
+						<div class="result"></div>
+					</div>
+					{% endif %}
+
+			</div>
+		</section>
+
+		<section id="produto-description">
+			{% if product.description %}
+			<div class="desc-simple">
+				<div class="title-desc">
+					<h2>Descri&#x00E7;&#x00E3;o</h2>
+				</div>
+				<div class="desc-content">
+					<h3>
+						{{product.description}}
+					</h3>
+				</div>
+			</div>
+			{% endif %}
+		</section>
+	</div>
+</main>
+
+
+{% set vitrineTrhee = Products({
+'order': {'quantity_sold': 'desc'},
+'limit': settings.vitrine_3_qtd
+}) %}
+
+{% if vitrineTrhee|length > 0 %}
+<div class="vitrine-home" data-vitrine="destaques">
+	<div class="container">
+		<div class="vitrine-content">
+			<div class="vitrine-title">
+				<h2 style="color:{{ settings.color_divisoria }}">Mais vendidos</h2>
+				<p>
+					{{ settings.vitrine_3_subtitulo }}
+				</p>
+			</div>
+
+
+			<div class="vitrine-produtos  {% if vitrineTrhee|length > 4 %}carrossel-prod{% endif %}">
+				{% for product in vitrineTrhee %}
+				<div class="col-md-3 col-xs-6 col-sm-4">
+					{% element 'snippets/product' {"product": product, "idVitrine": 3} %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+{# <div class="large-description">
+	<div class="container">
+		{{product.description}}
+	</div>
+</div> #}
+
+<div class="modal zoom_variavel" id="modal_zoom" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-center">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal-zoom-close-button"><span
+					aria-hidden="true">×</span></button>
+			<div class="imagem_produto">
+				<img src="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	/*exibe a imagem selecionada no slick para imagem principal*/
+	var slickProduto = document.querySelectorAll('[data-js="slide-image"]');
+	var imagemProduto = document.querySelector('[data-js="image-big"]');
+	var imageLupa = document.querySelector('[data-zoom-image]');
+	var videoManeiro = document.getElementById('videoManeiro');
+
+
+	slickProduto.forEach((img) => {
+		img.addEventListener('click', function () { // var imgDentro = document.querySelector('.zoomWindow');
+			imagemProduto.src = img.src;
+			imageLupa.dataset.magnifySrc = img.src;
+			// imgDentro.style.backgroundImage = "url(" + img.src + ")";
+			img.classList.add('ativo');
+			img.style.transition = "all 0.5s";
+			if (videoManeiro) {
+				videoManeiro.classList.remove('ativo');
+			}
+		})
+		img.addEventListener('mouseover', function () { // var imgDentro = document.querySelector('.zoomWindow');
+			imagemProduto.src = img.src;
+			imageLupa.dataset.magnifySrc = img.src;
+			// imgDentro.style.backgroundImage = "url(" + img.src + ")";
+			img.classList.add('ativo');
+			img.style.transition = "all 0.5s";
+			if (videoManeiro) {
+				videoManeiro.classList.remove('ativo');
+			}
+		})
+		img.addEventListener('mouseout', function () { // var imgDentro = document.querySelector('.zoomWindow');
+			imagemProduto.src = img.src;
+			imageLupa.dataset.magnifySrc = img.src;
+			// imgDentro.style.backgroundImage = "url(" + img.src + ")";
+			img.classList.remove('ativo');
+			img.style.transition = "all 0.5s";
+			if (videoManeiro) {
+				videoManeiro.classList.remove('ativo');
+			}
+		})
+	})
+</script>

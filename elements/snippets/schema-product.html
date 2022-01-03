@@ -1,0 +1,58 @@
+<meta itemprop="url" href="{{ product.link }}"/>
+<meta itemprop="name" content="{{ product.name }}"/>
+{% if product.ean %}
+    <meta itemprop="gtin14" content="{{ product.ean }}">
+{% endif %}
+
+{% if product.description_small %}
+    <meta itemprop="description" content="{{ product.description_small }}">
+{% endif %}
+
+{% if product.brand %}
+<span itemprop="brand" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="{{ product.brand }}"/>
+</span>
+{% endif %} 
+
+{% if product.model %}
+<meta itemprop="model" content="{{ product.model }}"/>
+{% endif %}
+
+<meta itemprop="productID" content="{{ product.id }}"/>
+<meta itemprop="sku" content="{{ product.id }}"/>
+
+{% if product.show_price %}
+<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="{{ product.minimum_price > 0 ? product.minimum_price|number_format(2, '.', '') : product.price|number_format(2, '.', '') }}" />
+    <meta itemprop="priceCurrency" content="{{ settings.currency == 'R$' ? 'BRL' : 'USD' }}" />
+    <link itemprop="itemCondition" href="http://schema.org/NewCondition" />
+    {% if settings.without_stock_sale or product.stock %}
+        <link itemprop="availability" href="http://schema.org/InStock" />
+    {% else %}
+        <link itemprop="availability" href="http://schema.org/OutOfStock" />
+    {% endif %} 
+    <meta itemprop="url" content="{{ product.link }}"/>
+    <meta itemprop="priceValidUntil" content="{{ product.promotion_id ? product.end_promotion: "now"|date("d/m/Y") }}">
+</span>
+{% endif %} 
+
+	
+{% if product.ranking.count %}
+<span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+    <meta itemprop="reviewCount" content="{{ product.ranking.count }}" /> 
+    <meta itemprop="ratingValue" content="{{ product.ranking.rating }}" /> 
+</span>		
+{% endif %}
+
+{% set image = product.images[0].large ?: tray.paths.system_image ~ "/new_imgoff.png" %}	
+<img itemprop="image" src="{{ image }}" alt="{{ product.name|e }}" class="tray-hide"/>
+
+{% if product.comments %}
+<span itemprop="review" itemscope itemtype="https://schema.org/Review">
+    {% for comment in product.comments %}
+        <meta itemprop="author" content="{{ comment.customer.name }}"/>
+        <meta itemprop="comment" content="{{ comment.comment }}"/>
+        <meta itemprop="commentCount" content="{{ comment.rating }}"/>
+    {% endfor %}
+</span>
+{% endif %}

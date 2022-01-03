@@ -1,0 +1,17 @@
+<div class="payment-list foo-payment row">
+    <h5>&Agrave; Vista</h5>
+    {% for payment in paymentMethods.order %}
+        <div class="col-sm-2 col-xs-2 payment-form">
+            <img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
+        </div>
+    {% endfor %}
+</div>
+
+<div class="payment-list foo-payment row">
+    <h5>A Prazo</h5>
+    {% for payment in paymentMethods.credit %}
+        <div class="col-sm-2 col-xs-2 payment-form">
+            <img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
+        </div>
+    {% endfor %} 
+</div>  

@@ -1,0 +1,78 @@
+{% if pages.current == 'home' %}
+	{% if utils.is_mobile %}
+		{% if settings.home_slick %}
+			<div class="banner-home">
+				{% if banners.extra5.slides and settings.home_slick %}
+					<div class="banner-home-slide" data-slick='{"autoplaySpeed": {{ ( settings.banner_interval ) }},
+												                        "lazyLoad":     "{{ ( settings.banner_lazyload ) }}",
+												                                        {{ ( settings.banner_arrows )             ? ' "arrows" : true,'
+												        : ' "arrows" : false,' }} {{ ( settings.banner_dots ) ? ' "dots" : true,'
+												        : ' "dots" : false,' }} {{ ( settings.banner_autoplay ) ? ' "autoplay" : true,'
+												        : ' "autoplay" : false,' }} {{ ( settings.banner_adaptive_height ) ? ' "adaptiveHeight" : true,'
+												        : ' "adaptiveHeight" : false,' }} {{ ( settings.banner_infinite ) ? ' "infinite" : true,'
+												        : ' "infinite" : false,' }} {{ ( settings.banner_effect_fade ) ? ' "fade" : true'
+												        : ' "fade" : false' }} }' data-autoplay="{{ settings.banner_autoplay ? 'true' : 'false' }}">
+						{% for slide in banners.extra5.slides %}
+							<div {{loop.index==1 ? 'class="first-slide"'}}>
+								<a href="{{ slide.link }}" target="{{ slide.target }}">
+									<img data-lazy="{{ slide.image }}" alt="{{ slide.label }}">
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+
+					{% if settings.banner_arrows or settings.banner_dots %}
+						<div class="banner-home-controls container">
+							<div class="slick-arrows"></div>
+						</div>
+					{% endif %}
+
+				{% else %}
+					<div class="banner">
+						{{ banner.extra5 }}
+					</div>
+				{% endif %}
+			</div>
+		{% else %}
+			<div class="banner banner-home">{{ banner.extra5 }}</div>
+		{% endif %}
+	{% else %}
+		{% if settings.home_slick %}
+			<div class="banner-home">
+				{% if banners.home.slides and settings.home_slick %}
+					<div class="banner-home-slide" data-slick='{"autoplaySpeed": {{ ( settings.banner_interval ) }},
+												                    "lazyLoad":     "{{ ( settings.banner_lazyload ) }}",
+												                                    {{ ( settings.banner_arrows )             ? ' "arrows" : true,'
+												        : ' "arrows" : false,' }} {{ ( settings.banner_dots ) ? ' "dots" : true,'
+												        : ' "dots" : false,' }} {{ ( settings.banner_autoplay ) ? ' "autoplay" : true,'
+												        : ' "autoplay" : false,' }} {{ ( settings.banner_adaptive_height ) ? ' "adaptiveHeight" : true,'
+												        : ' "adaptiveHeight" : false,' }} {{ ( settings.banner_infinite ) ? ' "infinite" : true,'
+												        : ' "infinite" : false,' }} {{ ( settings.banner_effect_fade ) ? ' "fade" : true'
+												        : ' "fade" : false' }} }' data-autoplay="{{ settings.banner_autoplay ? 'true' : 'false' }}">
+						{% for slide in banners.home.slides %}
+							<div {{loop.index==1?'class="first-slide"'}}>
+								<a href="{{ slide.link }}" target="{{ slide.target }}">
+									<img data-lazy="{{ slide.image }}" alt="{{ slide.label }}">
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+
+					{% if settings.banner_arrows or settings.banner_dots %}
+						<div class="banner-home-controls container">
+							<div class="slick-arrows"></div>
+						</div>
+					{% endif %}
+
+				{% else %}
+					<div class="banner banner-home">
+						{{ banner.home }}
+					</div>
+				{% endif %}
+			</div>
+		{% else %}
+			<div class="banner banner-home">{{ banner.home }}</div>
+		{% endif %}
+
+	{% endif %}
+{% endif %}

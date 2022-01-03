@@ -1,0 +1,33 @@
+/**
+ * Showcase
+ */
+
+.showcase{
+    background: #fff;
+    margin-top: 30px;
+    
+    > h2{
+        padding: 30px 0;
+        text-align: center;
+        text-transform: uppercase;
+        
+        @media screen and (max-width: $sm){
+            padding: 30px 5px;
+        }
+        
+        &:before{
+            border-bottom: 1px solid #e1e1e1;
+            content: '';
+            display: block;
+            margin-bottom: -25px;
+        }
+        
+        strong{
+            background: #fff;
+            color: #b92400;
+            padding: 0 20px;
+            text-align: center;
+            @include typo(4rem, 400, $font, 4rem);
+        }
+    }
+}

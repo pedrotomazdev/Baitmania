@@ -1,0 +1,135 @@
+{% set vitrineExibe1 = settings.vitrine_1_exibicao %}
+
+{% if vitrineExibe1 == "bestSelers" %}
+{% set vitrineOne = Products({
+'order': {'quantity_sold': 'desc'},
+'limit': settings.vitrine_1_qtd
+}) %}
+{% else %}
+{% set vitrineOne = Products({
+'filter': vitrineExibe1,
+'limit': settings.vitrine_1_qtd
+}) %}
+{% endif %}
+
+
+{% if settings.vitrine_1 != "" %}
+{% if vitrineOne|length > 0 %}
+<div class="vitrine-home" data-vitrine="destaques">
+	<div class="container">
+		<div class="vitrine-content">
+			<div class="vitrine-title">
+				<h2 style="color:{{ settings.color_divisoria }}">{{ settings.vitrine_1 }}</h2>
+				<p>
+					{{ settings.vitrine_1_subtitulo }}
+				</p>
+			</div>
+
+
+			<div
+				class='vitrine-produtos {% if settings.vitrine_1_carrossel_grade == "carrossel" and vitrineOne|length > 4 and not utils.is_mobile %}carrossel-prod{% endif %}'>
+				{% for product in vitrineOne %}
+				<div class="col-md-3 col-xs-6 col-sm-4">
+					{% element 'snippets/product' {"product": product, "idVitrine": 1} %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endif %}
+
+{% if banners.extra4.slides %}
+<div class="big-banners">
+	<div class="banners-content">
+		{% for slide in banners.extra4.slides %}
+		<div class="col-md-6 col-xs-12">
+			<div class="banner-item">
+				<a href="{{slide.link}}" target="{{ slide.target }}">
+					<img src="{{ slide.image }}" alt="{{ slide.label }}">
+				</a>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endif %}
+
+{% set vitrineExibe2 = settings.vitrine_2_exibicao %}
+{% if vitrineExibe2 == "bestSelers" %}
+{% set vitrineTwo = Products({
+'order': {'quantity_sold': 'desc'},
+'limit': settings.vitrine_2_qtd
+}) %}
+{% else %}
+{% set vitrineTwo = Products({
+'filter': vitrineExibe2,
+'limit': settings.vitrine_2_qtd
+}) %}
+{% endif %}
+{% if settings.vitrine_2 != "" %}
+{% if vitrineTwo|length > 0 %}
+<div class="vitrine-home" data-vitrine="destaques">
+	<div class="container">
+		<div class="vitrine-content">
+			<div class="vitrine-title">
+				<h2 style="color:{{ settings.color_divisoria }}">{{ settings.vitrine_2 }}</h2>
+				<p>
+					{{ settings.vitrine_2_subtitulo }}
+				</p>
+			</div>
+
+
+			<div
+				class="vitrine-produtos {% if settings.vitrine_2_carrossel_grade == 'carrossel' and vitrineTwo|length > 4 and not utils.is_mobile %}carrossel-prod{% endif %}">
+				{% for product in vitrineTwo %}
+				<div class="col-md-3 col-xs-6 col-sm-4">
+					{% element 'snippets/product' {"product": product, "idVitrine": 2} %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endif %}
+
+{% set vitrineExibe3 = settings.vitrine_3_exibicao %}
+{% if vitrineExibe3 == "bestSelers" %}
+{% set vitrineTrhee = Products({
+'order': {'quantity_sold': 'desc'},
+'limit': settings.vitrine_3_qtd
+}) %}
+{% else %}
+{% set vitrineTrhee = Products({
+'filter': vitrineExibe3,
+'limit': settings.vitrine_3_qtd
+}) %}
+{% endif %}
+{% if settings.vitrine_3 != "" %}
+{% if vitrineTrhee|length > 0 %}
+<div class="vitrine-home" data-vitrine="destaques">
+	<div class="container">
+		<div class="vitrine-content">
+			<div class="vitrine-title">
+				<h2 style="color:{{ settings.color_divisoria }}">{{ settings.vitrine_3 }}</h2>
+				<p>
+					{{ settings.vitrine_3_subtitulo }}
+				</p>
+			</div>
+
+
+			<div
+				class="vitrine-produtos  {% if settings.vitrine_3_carrossel_grade == 'carrossel' and vitrineTrhee|length > 4 and not utils.is_mobile %}carrossel-prod{% endif %}">
+				{% for product in vitrineTrhee %}
+				<div class="col-md-3 col-xs-6 col-sm-4">
+					{% element 'snippets/product' {"product": product, "idVitrine": 3} %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endif %}

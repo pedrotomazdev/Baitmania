@@ -1,0 +1,605 @@
+.page-catalog,
+.page-search{
+
+    &__item{
+        input{
+            min-width: 0 !important;
+        }
+    }
+    
+    .product{
+        min-height: 420px;
+    }
+    
+    .showcase-catalog > ul:first-child > li{
+        
+        .product{
+            margin-top: 0;
+        }
+        
+        @media screen and (max-width: $sm){
+            
+            .product{
+                margin-top: 30px;
+            }
+            
+            &:first-child .product{
+                margin-top: 0;
+            }
+        }
+    }
+    
+    .catalogo-comparator{
+        background: #3d4445;
+        color: #fff;
+        margin: 0;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        text-transform: uppercase;
+        top: -75px;
+        width: auto;
+        @include typo(1.5rem, 400, $font);
+        
+        @media screen and (max-width: $sm){
+            clear: both;
+            display: block;
+            margin-top: 15px;
+            position: static;
+            text-align: center;
+        }
+        
+        &:hover{
+            background: #3d4445;
+            color: #fff;
+        }
+    }
+    
+    .sidebar-hidden{
+        @media screen and (max-device-width: 1024px){
+            display: none !important;
+        }
+    }
+    
+    .sidebar{
+        background: #fff;
+        padding: 15px;
+        
+        @media screen and (max-device-width: 1024px){
+            margin-bottom: 30px;
+        }
+        
+        h2{
+            color: #a0a2a3;
+            text-transform: uppercase;
+            @include typo(2rem, 700, $font);
+            
+            &:after {
+                background: #fff;
+                border-bottom: 1px solid #a0a2a3;
+                border-top: 1px solid #a0a2a3;
+                content: '';
+                display: block;
+                height: 4px;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+        
+        h3{
+            color: #3d4445;
+            margin-bottom: 10px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            @include typo(1.5rem, 400, $font);
+        }
+        
+        li{
+            margin-bottom: 5px;
+        }
+        
+    }
+    
+    .catalog-menu.vertical-nav {
+        border: none;
+        height: auto;
+        margin: -15px;
+    }
+    
+    .smart-filter{
+        
+        a,
+        label{
+            color: #3d4445;
+            text-decoration: none;
+            @include typo(1.6rem, 400, $font, 1.7rem);
+        }
+    }
+    
+    // checkbox
+    .filter-checkbox{
+        border: 1px solid #aaa;
+        border-radius: 2px;
+        display: inline-block;
+        height: 14px;
+        margin-right: 5px;
+        position: relative;
+        vertical-align: top;
+        width: 14px;
+        
+        &.checked:before{
+            border-bottom: 2px solid #000;
+            border-left: 2px solid #000;
+            content: '';
+            height: 5px;
+            left: 1px;
+            position: absolute;
+            top: 2px;
+            width: 10px;
+            @include prefix('transform', 'rotate(-45deg)');
+        }
+    }
+    
+    .filters-list{
+        @media screen and (max-device-width: 1024px){
+            display: none;
+        }
+        
+        .applied-filters{
+            a:hover{
+                text-decoration: line-through;
+            }
+        }
+        
+        .filter-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            font-size: 1.7rem;
+            background-color: #525252;
+            color: #fff;
+        }           
+    }
+    
+    .banner-title{
+        margin-bottom: 15px;
+    }
+    
+    .catalog-header{
+        margin-top: 30px;
+        padding: 15px;
+        
+        .catalogo-pagination{
+            margin-top: 15px;
+            position: relative;
+        }
+    }   
+    
+    .catalog-footer{
+        background: #fff;
+        margin-top: 30px;
+        padding: 15px;
+        
+        .catalogo-comparator{
+            display: none;
+        }
+    }
+    
+    // catalog name
+    .catalog-name{
+        color: #3d4445;
+        margin-bottom: 15px;
+        @include typo(2.5rem, 700, $font);
+    }
+    
+    // pagination
+    .catalogo-display{
+        color: #3d4445;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        
+        @media screen and (max-width: $sm){
+            float: none;
+            text-align: center;
+        }
+    }
+    
+    .catalogo-pages{
+        font-size: 1.4rem;
+        color: #3d4445;
+        
+        @media screen and (max-width: $sm){
+            float: none;
+            text-align: center;
+        }
+    }
+    
+    .btns-paginator {
+        border: 1px solid #aaa;
+        color: #aaa;
+        display: inline-block;
+        line-height: 2rem;
+        margin: 0 5px;
+        vertical-align: top;
+        
+        a{
+            color: #aaa;
+            display: block;
+            line-height: 2rem;
+            padding: 0 5px;
+        }
+        
+        &.selectedPg{
+            border-color: #3d4445;
+            color: #3d4445;
+            padding: 0 5px;
+        }
+        
+        @media screen and (max-width: $sm){
+            &.btn-proxima-pagina,
+            &.btn-ultima-pagina,
+            &.btn-primeira-pagina,
+            &.btn-pagina-anterior{
+                display: block !important;
+                margin: 15px 0 !important;
+                text-align: center;
+            }
+        }
+    }
+    
+    .separador-paginas{
+        display: none;
+    }
+    
+    // system filters
+    .system-filter{
+        
+        .filtros{
+            float: none;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 15px;
+            @include typo(2rem, 400, $font);
+            
+            @media screen and (max-width: $sm){
+                display: block;
+                margin-top: 15px;
+                margin-right: 0;   
+            }
+        
+            .select{
+                display: block;
+                margin-top: 5px;
+                @include typo(2rem, 400, $font);
+                min-width: 200px;
+            }
+        }
+    }
+    
+    // breadcrumb
+    .breadcrumb{
+        margin-bottom: 15px;
+        padding: 0;
+    }
+    
+    .category-description{
+        @include typo(2.5rem, 400, $font, 2rem);
+        margin: 20px 0;
+    }        
+    
+    // search advanced
+    #vitrine-catalogo{
+        
+        #Vitrine + br,
+        #Vitrine + br + .container,
+        .container3:first-child{
+            display: none;
+        }
+        
+        #Vitrine{
+            background: #fff;
+            font-size: 1.4rem;
+            padding: 30px;
+            
+            input[type="text"]{
+                padding: 5px;
+            }
+            
+            .select{
+                padding: 5px;
+            }
+            
+            form p{
+                line-height: 2rem;
+                margin: 30px 0;
+                
+                input{
+                    margin-right: 5px;
+                }
+            }
+            
+            input[type="image"]{
+                background: url('../img/send-button.png') left top;
+                height: 0;
+                padding: 20px 65px;
+                width: 0;
+            }
+        }
+        
+        .blocoAlerta{
+            margin: 30px 0;
+        }
+        
+        #div_erro{
+            margin-top: 30px;
+            
+            a h3{
+                font-size: 1.6rem;
+            }
+        }
+    }
+    
+    // comparator
+    .compare-buttons{
+        margin-top: 15px;
+        
+        a{
+            color: #3d4445;
+            text-decoration: none;
+            @include typo(1.6rem, 400, $font, 1.7rem);
+        }
+    }
+    
+    // catalog empty
+    .catalog-empty{
+        background: #fff;
+        padding: 0 30px 30px;
+        text-align: center;
+        
+        p{
+            font-size: 2rem;
+        }
+    }
+    
+    // visited
+    #NavVisitados{
+        margin-top: 30px;
+        padding: 30px;
+        
+        @media screen and (max-width: $sm){
+            padding: 15px;
+        }
+        
+        > h4{
+            color: #9e9e9e;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            @include typo(1.3rem, 400, $font, 1.3rem);
+        }
+        
+        > h3{
+            color: #000;
+            text-transform: uppercase;
+            @include typo(2.5rem, 400, $font, 2.5rem);
+        }
+        
+        .visitados{
+            position: relative;
+        }
+        
+        .visitados_produtos{
+            overflow: hidden;
+            
+            @media screen and (max-width: $sm){
+                padding-bottom: 85px;
+            }
+        }
+        
+        .paginacao_ajax{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            
+            @media screen and (max-width: $sm){
+                border-top: 1px solid #e8e8e8;
+                padding-top: 15px;
+                width: 100%;
+            }
+        }
+        
+        .clearVisiteds{
+            bottom: 0;
+            padding: 0 10px;
+            position: absolute;
+            text-decoration: none;
+            right: 300px;
+            @include typo(1.5rem, 400, $font, 2.5rem);
+            
+            @media screen and (max-width: $sm){
+                position: static;
+                width: 100%;
+            }
+            
+            @media screen and (max-device-width: 1024px){
+                bottom: 35px;
+            }
+        }
+        
+        .myNavigation{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            @include typo(1.5rem, 400, $font, 2.5rem);
+        }
+        
+        .total_produtos{
+            color: #aaa;
+            margin-right: 30px;
+            @include typo(1.5rem, 400, $font, 2.5rem);
+            
+            @media screen and (max-width: $sm){
+                display: block;
+                margin: 0;
+            }
+        }
+        
+        .paginacao_ajax_prod{
+            color: #aaa;
+            @include typo(1.5rem, 400, $font, 2.5rem);
+            
+            #linksPag{
+                
+                a{
+                    border-radius: 25px;
+                    color: #aaa;
+                    display: inline-block;
+                    height: 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 25px;
+                    @include typo(1.5rem, 400, $font, 2.5rem);
+                }    
+                
+                .pageON{
+                    background: #000;
+                    color: #fff !important;
+                }
+            }
+        }
+        
+        .visitados_itens{
+            border-left: 1px solid #eee;
+            float: right;
+            min-height: 360px;
+            min-width: 280px;
+            padding-left: 15px;
+            line-height: 2;
+            
+            @media screen and (max-width: $sm){
+                border: none;
+                float: none;
+                min-width: 100%;
+                margin-top: 15px;
+                padding: 15px 0 0;
+            }
+            
+            h4{
+                color: #aaa;
+                margin: 0 0 10px;
+                @include typo(1.5rem, 400, $font, 1.8rem);
+            }
+            
+            .itens{
+                border-top: 1px solid #eee;
+                height: 165px;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                
+                &:first-child{
+                    border-top: none;
+                }
+                
+                &:nth-child(2){
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    padding-top: 15px;
+                }
+                
+                a{
+                    color: #aaa;
+                }
+            }
+        }
+        
+        #produtos{
+            
+            > ul{
+                float: left;
+                padding: 0 15px;
+                width: 33%;
+                
+                @media screen and (max-width: $sm){
+                    float: none;
+                    padding: 0;
+                    width: 100%;
+                }
+            }
+        }
+        
+        .FotoLista{
+            border-bottom: 1px solid #eee;
+            font-size: 0;
+            height: 180px;
+            margin-bottom: 15px;
+            text-align: center;
+            
+            &:before{
+                content: '';
+                display: inline-block;
+                height: 180px;
+                vertical-align: middle;
+                width: 1%;
+            }
+            
+            img{
+                display: inline-block;
+                max-width: 99%;
+                vertical-align: middle;
+            }
+        }
+        
+        .NomeProdLista{
+            color: #3d4445;
+            display: block;
+            height: 36px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            @include typo(1.5rem, 400, $font, 1.8rem);
+            
+            @media screen and (max-width: $sm){
+                margin-bottom: 7px;
+                @include typo(1.2rem, 400, $font, 1.3rem);
+            }
+        }
+        
+        .ValoresLista{
+            color: #000;
+            @include typo(1.6rem, 400, $font, 1.6rem);
+            
+            .oculta_destaque{
+                display: none;
+            }
+            
+            .precoAvista{
+                color: #ff5556;
+                display: block;
+                height: 18px;
+                overflow: hidden;
+                @include typo(1.5rem, 700, $font, 2rem);
+                
+                & + br{
+                    display: none;
+                }
+            }
+            
+            span,
+            strong{
+                color: #000;
+                @include typo(1.6rem, 400, $font, 1.6rem);
+            }
+            
+            strong{
+                font-weight: 700;
+                
+                span{
+                    font-weight: 700;
+                }
+            }
+        }
+        
+        .precode{
+            color: #aaa;
+        }
+    }     
+}

@@ -1,0 +1,21 @@
+ 
+{% if paginate.params.pageCount > 1 %}
+    {{ paginate.first('<<', {'class': 'page-first'}) }}
+ 
+    {% if paginate.hasPrev %}
+        {{ paginate.prev('<', {'class': 'page-prev'}) }}
+    {% endif %}
+ 
+    {{ paginate.numbers({
+        'modulus': 9,
+        'separator': '',
+        'class': 'page-link',
+        'currentClass': 'page-current'
+    }) }}
+ 
+    {% if paginate.hasNext %}
+        {{ paginate.next('>', {'class': 'page-next'}) }}
+    {% endif %}
+ 
+    {{ paginate.last('>>', {'class': 'page-last'}) }}
+{% endif %}

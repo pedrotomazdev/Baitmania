@@ -1,0 +1,110 @@
+<header class="main-header">
+	{% element 'snippets/customer' %}
+	<div class="parte_principal" style="background-color:{{ settings.color_primaria_clara }}">
+		<div class="container">
+			<div class="content-header">
+				<div class="button-menu" id="menuMob">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+						xmlns:svgjs="http://svgjs.com/svgjs" width="35" height="35" x="0" y="0" viewBox="0 0 341.333 341.333"
+						style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+						<g>
+							<g xmlns="http://www.w3.org/2000/svg">
+								<g>
+									<rect y="277.333" width="341.333" height="42.667" data-original="#000000" style="" class=""></rect>
+								</g>
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+								<g>
+									<rect y="149.333" width="341.333" height="42.667" data-original="#000000" style="" class=""></rect>
+								</g>
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+								<g>
+									<rect y="21.333" width="341.333" height="42.667" data-original="#000000" style="" class=""></rect>
+								</g>
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+							<g xmlns="http://www.w3.org/2000/svg">
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="busca-avancada">
+					{% element 'snippets/search' %}
+				</div>
+
+				<div class="logo">
+					{% if pages.current == 'home' %}
+					<h1 class="site-logo" alt="{{ store.name }}">
+						<a href="{{ links.home }}" data-tray-tst="logotipo_loja">
+							{{ Image('logo') }}
+						</a>
+					</h1>
+					{% else %}
+					<a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">
+						{{ Image('logo') }}
+					</a>
+					{% endif %}
+				</div>
+
+
+				<div class="account-cart">
+					<div class="cart-header item-header">
+						<a href="{{links.cart}}">
+							<i class="icon-header">
+								<small style="color:{{ settings.color_bolinha_carrinho }}">
+									<span data-cart="amount"></span>
+								</small>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.06 153.81">
+									<g id="Layer_2" data-name="Layer 2">
+										<g id="Layer_1-2" data-name="Layer 1">
+											<path
+												d="M166,26.85A4.8,4.8,0,0,0,162.24,25H45.39l-.12,0C36,7.94,16.86,1.16,5.29,0a4.82,4.82,0,1,0-.94,9.59C5.84,9.76,41,13.6,41,47.39c0,4.46,0,8.88.19,13.23,0,0,0,.06,0,.09a1.1,1.1,0,0,0,0,.18c.7,21.26,3.88,40.6,17.11,53.45a43.83,43.83,0,0,0,9.41,7,17.28,17.28,0,1,0,24.94,6.92c2.68.23,5.45.35,8.36.35,1.12,0,2.27,0,3.43-.05h10.23a17.27,17.27,0,1,0,30.55,0h2.59a4.82,4.82,0,1,0,0-9.64H104.27c-18,.53-30.84-3.23-39.28-11.44a36.55,36.55,0,0,1-7.67-11.05h91.27a4.82,4.82,0,0,0,4.7-3.78l13.65-61.69A4.79,4.79,0,0,0,166,26.85ZM77.1,143.37a7.63,7.63,0,1,1,7.63-7.63A7.64,7.64,0,0,1,77.1,143.37Zm52.82.8a7.63,7.63,0,1,1,7.63-7.63A7.64,7.64,0,0,1,129.92,144.17ZM156.24,34.68l-4.7,21.21H50.67c-.05-2.8-.07-5.64-.07-8.5A50.32,50.32,0,0,0,49,34.68ZM144.72,86.75H54a110.47,110.47,0,0,1-3-21.22h98.41Z" />
+										</g>
+									</g>
+								</svg>
+							</i>
+
+							<span class="text-cart">
+								Meu carrinho
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-full" style="background-color:{{ settings.color_primaria }}; margin: 15px 0 0;">
+		{% element 'horizontal-nav' %}
+	</div>
+
+</header>

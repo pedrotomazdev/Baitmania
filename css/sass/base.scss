@@ -1,0 +1,222 @@
+// fonts
+
+$font: 'roboto', sans-serif;
+
+// vendor prefix
+@mixin prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+       -moz-#{$name}: #{$argument};
+        -ms-#{$name}: #{$argument};
+         -o-#{$name}: #{$argument};
+            #{$name}: #{$argument};
+}
+
+// styling placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}   
+}
+
+@mixin typo($size:12px, $w:400, $family:$font, $lh:1) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $w;
+    line-height: $lh; 
+}
+
+// default transition
+.transition{
+    @include prefix('transition', '300ms all ease 0s');
+}
+
+// queries
+$sm: 767px;
+$md: 992px;
+
+// rem ajust
+html,
+body{
+    @include typo(10px, 400, $font, 1);
+}
+
+
+
+.content-split{
+    border-color: #ccc;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.page-content .container{
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+
+
+.site-main {
+    position: relative;
+    z-index: 10;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+
+.col-centered{
+    display: inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+// Adjust for mobile
+.suggestion{
+    @media screen and (max-width: $sm){
+        left: 0;
+        margin: 0 -48px;
+        min-width: 100%;
+        right: 0;
+        top: 60px;
+    }
+}
+
+#miniad{
+    width: auto;
+}
+
+.board{
+    font-size: 11px !important;
+}
+
+.board_htm{
+    &.description {
+        font-size: 1.5rem;
+        line-height: 3rem;
+        margin: 10px 0;
+    }
+}
+
+//paginas parceiros e afiliados
+.page-extra tbody p{
+    font-size: 15px;
+}
+
+.page-extra [name="form1"] tr{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+.page-extra [name="form1"] td{
+    width: 100%;
+    margin: 5%;
+}
+
+.page-extra [name="form1"] td input{
+    margin: 0 9px;
+    width: 100px;
+}
+
+.caixa-forma-credit img{
+    height: 40px !important;
+    width: 60px !important;
+}
+
+/* Lista presentes */
+
+.lista_presentes table{
+    font-size: 0.875rem !important;
+}
+
+.lista_presentes strong,
+.lista_presentes b{
+    font-weight: 600 !important;
+}
+
+.lista_presentes th{
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    padding: 0.6rem !important;
+}
+
+.lista_presentes td{
+    padding: 0.6rem !important;
+}
+
+.lista_presentes select.select{
+    width: 100% !important;
+    margin-bottom: 0.65rem !important;
+    min-width: 295px !important;
+}
+
+.lista_presentes td a{
+    width: 100px !important;
+    display: block !important;
+    float: left !important;
+}
+
+.lista_presentes td a img{
+    max-width: 100% !important;
+}
+
+.lista_presentes td a + strong{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    width: calc(100% - 104px) !important;
+    font-size: 0.75rem !important;
+    max-width: 250px !important;
+    
+}
+
+.lista_presentes textarea{
+    border: 1px solid #e4e4e4 !important;
+    padding: 14px !important;
+    border-radius: 0px !important;
+    color: #565656 !important;
+    width: 100% !important;
+    display: block !important;
+    margin-top: 0.25rem !important;
+}
+
+.lista_presentes li:last-child{
+    margin-bottom: 0.938rem !important;
+}
+
+#form_presentes .relative-button{
+    float: right !important;
+}
+
+#form_presentes .botao-commerce{
+    display: inline-block !important;
+}
+
+@media (max-width: 991px){
+    
+    #form_presentes{
+        display: block !important;
+        max-width: 450px !important;
+        width: 100% !important;
+        margin: auto !important;
+    }
+    
+    .lista_presentes li:not([class]):first-child{
+        display: none !important;
+    }
+    
+    .lista_presentes td{
+        display: block;
+        width: 100% !important;
+    }
+
+}
+
+#visualAbas{
+    display:none;
+}

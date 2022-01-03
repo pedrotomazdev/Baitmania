@@ -1,0 +1,44 @@
+/**
+ * Search
+ */
+
+.search{
+    margin-top: 130px;
+    
+    @media screen and (max-width: $sm){
+        margin-top: 0;
+    }
+    
+    form{
+        background: #fff;
+        border-bottom: 1px solid #eaeaea;
+        height: 40px;
+        padding: 0 15px;
+        
+        @media screen and (max-width: $sm){
+            border: none;
+            margin-top: 9px;
+        }
+    
+        > div{
+            overflow: hidden;
+        }
+    }
+    
+    .search-button{
+        background: none;
+        border: none;
+        height: 30px;
+        margin: 4px;
+        width: 30px;
+    }
+    
+    .search-key{
+        background: none;
+        border: none;
+        height: 38px;
+        font-size: 1.5rem;
+        padding: 12px 10px 12px 0;
+        width: 100%;
+    }
+}

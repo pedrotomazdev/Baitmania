@@ -1,0 +1,171 @@
+.product{
+    display: block;
+    position: relative;
+    
+    &:hover{
+        .product-image{
+            img{ @include prefix('transform', 'scale(1.1)'); }
+        }
+    }
+        
+    a,
+    a:hover
+    a:focus,
+    a:active{
+        position: relative;
+        outline: none;
+        text-decoration: none;
+        z-index: 1;
+    }
+    
+    .product-image{
+        border-bottom: 1px solid #eee;
+        font-size: 0;
+        height: 380px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        
+        @media screen and (max-width: $sm){
+            margin-bottom: 7px;
+            height: 300px;
+        }
+        
+        &:before{
+            content: '';
+            display: inline-block;
+            height: 380px;
+            margin-right: -1%;
+            vertical-align: middle;
+            width: 1%;
+            
+            @media screen and (max-width: $sm){
+                height: 300px;
+            }
+        }
+        
+        img{
+            display: inline-block;
+            max-height: 100%;
+            max-width: 100%;
+            vertical-align: middle;
+            @include prefix('transition', '300ms all ease 0s');
+        }
+        
+        .discount{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.4rem;            
+            color: #fff;
+            opacity: .9;
+        }        
+    }
+    
+    .product-name{
+        color: #3d4445;
+        display: block;
+        height: 62px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        text-overflow: initial;
+        white-space: initial;
+        z-index: 1;
+        @include typo(1.5rem, 400, $font, 2rem);
+    }
+        
+    .product-price{
+        color: #000;
+        display: block;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        @include typo(2rem, 700, $font, 2rem);
+
+        .price-before{
+            color: #ccc;
+            font-size: 1.5rem;
+            left: 0;
+            position: absolute;
+            text-decoration: line-through;
+            top: -17px;
+            width: 100%;
+        }
+        
+        .precode{
+            @include typo(1.4rem, 400, $font, 1.4rem);
+        }
+
+        &.depor .price{
+            text-decoration: none;
+        }
+    }
+    
+    .product-price{
+        color: #000;
+        display: block;
+        margin-bottom: 5px;
+        position: relative;
+        z-index: 1;
+        @include typo(2.2rem, 700, $font, 2rem);
+        
+        .price-various{
+            display: none;
+        }
+        
+        .price-before {
+            font-size: 1.4rem;
+            color: #ccc;
+            font-weight: 400;
+            position: absolute;
+            top: -20px;
+            width: 100%;
+            
+        }        
+        
+        &.strike .price-before { text-decoration: line-through }
+        &.depor .price-before{ text-decoration: none }
+    }    
+    
+    .product-payment{
+        color: #000;
+        display: block;
+        margin-bottom: 15px;
+        min-height: 60px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        @include typo(1.5rem, 400, $font, 1.8rem);
+        
+        @media screen and (max-width: $sm){
+            margin-bottom: 7px;
+        }
+        
+        > br:first-child{
+            display: none;
+        }
+        
+        span,
+        strong{
+            color: #000;
+            @include typo(1.5rem, 400, $font, 1.8rem);
+            
+            @media screen and (max-width: $sm){
+                @include typo(1.6rem, 400, $font, 1.6rem);
+            }
+        }
+    }
+    
+    .compare-buttons{
+        position: relative;
+        text-align: center;
+        z-index: 10;
+    }
+}

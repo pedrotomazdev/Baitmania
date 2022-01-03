@@ -1,0 +1,58 @@
+.customer-1{
+    background: #ebebeb;
+    color: #888;
+    @include typo(14px, 400, $font, 16px);
+    padding: 15px 0;
+    text-transform: uppercase;
+    
+    a{
+        color: #4b8cdc;
+        font-weight: 700;
+    }
+    
+    .login{
+        @media screen and (max-width: $sm){
+            display: none;
+        }
+    }
+    
+    .orders{
+        text-align: right;
+        
+        @media screen and (max-width: $sm){
+            text-align: center;
+        }
+        
+        > *{
+            color: #000;
+            border-right: 1px solid #888;
+            display: inline-block;
+            margin-right: 15px;
+            padding-right: 15px;
+            
+            @media screen and (max-width: $sm){
+                margin-right: 10px;
+                padding-right: 10px;
+            }
+            
+            &:first-child,
+            &:nth-child(2){
+                display: none !important;
+                
+                @media screen and (max-width: $sm){
+                    display: inline-block !important;
+                    
+                    &.tray-hide{
+                        display: none !important;
+                    }
+                }
+            }
+            
+            &:last-child{
+                border-right: none;
+                margin-right: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,396 @@
+.page-listas_index {
+    
+    .page-content {
+        background: #fff;
+        margin-top: 30px;
+        padding: 25px;
+    }
+    
+    > h2 {
+        color: #3d4445;
+        padding-bottom: 15px;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    }
+    
+    #tipos-listas {
+        
+        li {
+            margin-bottom: 30px;
+        }
+        
+        h3 {
+            @include typo(1.3rem, 400, $font, 1.3rem); 
+        }
+    }
+} 
+
+
+.page-listas_evento {
+    
+    .banner_lista {
+        text-align: center;
+    }
+    
+    .titulo-box {
+        margin-top: 30px;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    }
+    
+    .container2 {
+        > .board {
+            @include typo(1.3rem, 400, $font, 1.3rem); 
+        }
+        
+        form {
+            margin-top: 20px;
+            
+            .listaClass,
+            input[type="text"] {
+                margin: 7px 10px 10px 0;
+                padding: 6px;
+                
+                @media screen and (max-width: $sm){
+                    width: 90%;
+                }
+            }
+        }
+        
+        .bt-avancar {
+            float: left;
+            margin-top: 15px;
+        }
+        @media screen and (max-width: $sm){
+            .busca {
+                tr {
+                    display: inline-block;
+                    width: 100%;
+                }
+                
+                td {
+                    display: block;
+                    width: 53%;
+                }
+            }
+        }
+    }
+    
+    .busca {
+        margin-top: 20px;
+    }
+
+    .page-content {
+        background: #fff;
+        margin-top: 30px;
+        padding: 25px;
+    }
+}
+
+
+.page-listas_busca {
+    
+    .page-content {
+        background: #fff;
+        margin-top: 30px;
+        padding: 25px;
+    }
+    
+    .titCatalogo {
+        margin-bottom: 15px;
+        margin-top: 30px;
+        
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    } 
+    
+    form {
+        margin-top: 20px;
+    }
+    
+    .busca input {
+        background: none;
+        margin: 7px 0 0;
+        padding: 6px;
+    }
+    
+    .busca-label {
+       @include typo(1.3rem, 400, $font, 1.3rem);  
+    }
+    
+    .bt-avancar {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+.page-listas_criar {
+    
+    .page-content {
+        background: #fff;
+        margin-top: 30px;
+        padding: 25px;
+    }
+    
+    #txt-cabecalho { 
+        margin-top: 30px;
+        span{
+             @include typo(1.3rem, 400, $font, 1.3rem); 
+        }
+    }
+    
+    #aviso_obriga {
+        @include typo(1.3rem, 400, $font, 1.3rem); 
+    }
+    
+    .banner_lista {
+        text-align: center;
+    }
+    
+    .titulo-box {
+        margin-top: 30px!important;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    }
+    
+    .container2 {
+        > .board {
+            @include typo(1.3rem, 400, $font, 1.3rem); 
+        }
+        
+        .bt-avancar {
+            float: left;
+        }
+        
+        tr {
+            display: inline-block;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            width: 100%;
+        }
+    }
+    
+    #lista_criar { 
+        margin-top: 20px;
+        .label {
+            display: inline-block;
+            font: 400 1.3rem/1.3rem $font!important;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            text-align: left!important;
+            width: 100%;
+            
+            br {
+                display: none;
+            }
+        }
+        
+        #mensagem,
+        .select,
+        .text {
+            background: none;
+            border: 1px solid #eee!important;
+            height: auto;
+            margin: 7px 0 0;
+            padding: 6px;
+        }
+        
+        .label2 {
+            display: inline-block;
+            font: 400 1.3rem/1.3rem $font!important;
+
+        }
+        #nome_lista,
+        #endereco_cliente {
+            @media screen and (max-width: $sm){
+                width: 95%;
+            }
+        }
+        
+        .obriga {
+            border-left: 0;
+        }
+    }
+    
+    #aviso_obriga {
+        .obriga {
+            font-size: 0;
+            
+            &:before {
+                content:'*asterisco';
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+.page-print_lista,
+.page-lista {
+    
+    .page-content {
+        background: #fff;
+        margin-top: 30px;
+        padding: 25px;
+    }
+    
+    h2 {
+        color: #3d4445;
+        padding-bottom: 15px;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+    }
+    
+    .container2 {
+        > div {
+            @include typo(1.3rem, 400, $font, 1.3rem);
+            
+            strong {
+                @include typo(1.3rem, 700, $font, 1.8rem);
+            }
+        }
+        
+        .board {
+            margin-top: 15px;
+            
+            .left {
+                margin-bottom: 15px;
+            }
+            
+            .filtros {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .lista-produtos {
+        border: 1px solid #eee;
+        margin-bottom: 30px;
+        
+        .lista-produto-valores,
+        .lista-produto-solicitados,
+        .lista-produto-imagem {
+            display: inline-block;
+        }
+        
+        .lista-produto-imagem {
+            margin: 23px;
+            
+            @media screen and (max-width: $sm){
+                margin: 23px 0;
+                text-align: center;
+                width: 100%;
+             }
+        }
+        
+        .lista-produto-dados {
+            display: inline-block;
+            padding: 12px 12px 0 50px;
+            vertical-align: top;
+            width: 40%;
+            
+            @media screen and (max-width: $sm){
+                padding: 0;
+                text-align: center;
+                width: 100%;
+             }
+            
+            img {
+                margin-top: 20px;
+            }
+        }
+        
+        form {
+            float: right;
+            width: 15%;
+            @media screen and (max-width: $sm){
+                margin-top: 20px;
+                text-align: center; 
+                width: 100%;
+             }
+        }
+        
+        .lista-produto-comprar {
+            .refresh,
+            .refresh_exclusao {
+                background: url(../img/remove.png) center top no-repeat;
+                float: right;
+                height: 12px;
+                margin: 60px 35px 0 0;
+                width: 12px;
+                
+                img {
+                    display: none;
+                }
+                
+                @media screen and (max-width: $sm){
+                    margin: 0;
+                }
+            }
+            
+            @media screen and (max-width: $sm){
+                text-align: center;
+                display: inline-block;
+             }
+        }
+        
+        .lista-produto-qtde {
+            width: 100%;
+            
+            .qntd {
+                border: 1px solid #eee;
+                height: 25px;
+                margin: 10px 15px;
+                text-align: center;
+                width: 25px;
+            }
+        }
+        
+        .lista-produto-quantidade {
+            padding-top: 25px;
+            
+            @media screen and (max-width: $sm){
+                text-align: center; 
+             }
+        }
+        
+        .refresh {
+            background: url(../img/refresh.png) center top no-repeat;
+            height: 20px;
+            margin: 0 19px;
+            width: 20px;
+            
+            img {
+                display: none;
+            }
+            
+            @media screen and (max-width: $sm){
+                width: auto;
+             }
+        }
+        
+        .lista-produto-valores {
+            margin-left: 40px!important;
+            
+            @media screen and (max-width: $sm){
+                margin-bottom: 20px!important;
+                margin: 0!important;
+                text-align: center; 
+                width: 100%;
+            }
+            
+            .txt-por {
+                width: 100%;
+                display: inline-block;
+            }
+            
+            .precoAvista {
+                @include typo(2.5rem, 400, $font, 2.5rem);
+            }
+        }
+        
+        .lista-produto-solicitados {
+            margin-left: 45px!important;
+             @media screen and (max-width: $sm){
+                margin: 20px 0!important;
+                text-align: center;
+                width: 100%; 
+                
+             }
+        }
+    }
+}

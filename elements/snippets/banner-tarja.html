@@ -1,0 +1,35 @@
+{% if settings.banner_tarja %}
+	<div class="banner-tarja tarja-1">
+		<div class="container">
+			<div class="content-tarja">
+				{% for i in range(0,5) %}
+					{% if attribute(settings, 'linha_fio_svg_' ~ loop.index) %}
+						<div class="item-tarja">
+							{% if attribute(settings, 'linha_fio_link_' ~ loop.index) %}
+								<a target="_blank" href="{{ attribute(settings, 'linha_fio_link_' ~ loop.index) }}">
+							{% endif %}
+
+
+								<div class="content-item">
+									<div class="icon">
+										<img src="{{themePath}}{{ attribute(settings, 'linha_fio_svg_' ~ loop.index) }}" alt="">
+									</div>
+									<div class="text">
+										<div class="main-text">
+											{{ attribute(settings, 'linha_fio_title_' ~ loop.index) }}
+										</div>
+										<div class="sub-text">
+											{{ attribute(settings, 'linha_fio_description_' ~ loop.index) }}
+										</div>
+									</div>
+								</div>
+							{% if attribute(settings, 'linha_fio_link_' ~ loop.index) %}
+								</a>
+							{% endif %}
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endif %}

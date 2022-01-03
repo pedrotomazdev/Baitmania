@@ -1,0 +1,30 @@
+{% if settings.categorias_menu %}
+<div class="container">
+
+	<div class="carrossel-marcas vitrine-home">
+		<div class="carrossel-marcas-content">
+			<div class="vitrine-title">
+				<h2 style="color:{{ settings.color_divisoria }}">Compre por marcas</h2>
+				<p></p>
+			</div>
+
+			<div class="content-marcas">
+				{% for i in range(0,12) %}
+				{% if attribute(settings, 'categorias_menu_svg_' ~ loop.index) %}
+				<div class="item-marca">
+					<a target="_blank" href="{{ attribute(settings, 'categorias_menu_link_' ~ loop.index) }}">
+						<div class="content-item">
+							<div class="icon">
+								<img src="{{themePath}}{{ attribute(settings, 'categorias_menu_svg_' ~ loop.index) }}"
+									alt="{{ attribute(settings, 'categorias_menuio_title_' ~ loop.index) }}">
+							</div>
+						</div>
+					</a>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}

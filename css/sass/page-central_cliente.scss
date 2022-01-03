@@ -1,0 +1,225 @@
+.page-central_gera_troca,
+.page-central_listas_cliente,
+.page-central_comissoes_extrato,
+.page-central_comissoes,
+.page-central_listas,
+.page-central_cliente,
+.page-central_anteriores,
+.page-central_confirmar_pagamento,
+.page-central_rastrear,
+.page-central_troca,
+.page-central_detalhe_pedido,
+.page-central_senha,
+.page-central_lista_espera,
+.page-rastreio,
+.page-navegacao_visitados,
+.page-map,
+.page-central_bonus,
+.page-central_premiacao,
+.page-central_premiacao_ativas,
+.page-central_premiacao_classificacao,
+.page-central_premiacao_historico,
+.page-central_premiacao_indique,
+.page-central_comentarios{
+    
+    // content
+    .page-content{
+        
+        > *{
+            background: #fff;
+            padding: 15px;
+        }
+        
+        @media screen and (max-width: $sm){
+            padding: 15px;
+        }
+            
+        .breadcrumb{
+            display: none;
+        }
+        
+        h1{
+            color: #a0a2a3;
+            text-transform: uppercase;
+            @include typo(2rem, 700, $font);
+            
+            &:after {
+                background: #fff;
+                border-bottom: 1px solid #a0a2a3;
+                border-top: 1px solid #a0a2a3;
+                content: '';
+                display: block;
+                height: 4px;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+        
+        h5{
+            color: #a0a2a3;
+            text-transform: uppercase;
+            @include typo(1.5rem, 700, $font);
+        }
+    }
+    
+    .central-menu {
+        
+        + .container,
+        > br,
+        > div[style="clear:both"]{
+            display: none;
+        }
+    }
+    
+    .central-saudacao{
+        font-size: 1.4rem;
+        line-height: 2rem;
+        
+        > br:first-child{
+            display: none;
+        }
+    }
+    
+    .central-titulo{
+        display: none;
+    }
+    
+    // sidebar
+    .sidebar-central{
+        
+        > div{
+            background: #fff;
+            border: 1px solid #e2e2e2;
+            padding: 15px;
+            
+            h2{
+                color: #a0a2a3;
+                text-transform: uppercase;
+                @include typo(2rem, 700, $font);
+                
+                &:after {
+                    background: #fff;
+                    border-bottom: 1px solid #a0a2a3;
+                    border-top: 1px solid #a0a2a3;
+                    content: '';
+                    display: block;
+                    height: 4px;
+                    margin-top: 10px;
+                    width: 100%;
+                }
+            }
+            
+            a{
+                color: #3d4445;
+                text-decoration: none;
+                @include typo(1.2rem, 400, $font, 1.7rem);
+                
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            
+            li{
+                margin-bottom: 5px;
+            }
+            
+            h4{
+                color: #3d4445;
+                margin-bottom: 10px;
+                margin-top: 30px;
+                text-transform: uppercase;
+                @include typo(1.5rem, 400, $font);
+            }
+        }
+    }
+    
+    .central-conteudo + .board {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        
+        @media screen and (max-width: $sm){
+            overflow: scroll;
+        }
+        
+        a{
+            color: #3d4445;
+        }
+    }
+    
+    .board form[name="form1"]{
+        overflow: scroll;
+    }
+    
+    table{
+        margin-top: 30px;
+        
+        th,
+        td{
+            border-bottom: 1px solid #DDD;
+            font-size: 1.4rem;
+            padding: 10px;
+        }
+        
+        th{
+            background: #eee;
+            white-space: nowrap;
+        }
+        
+        a{
+            color: #3d4445;
+        }
+    }
+    
+    #senha_atual,
+    #nova_senha,
+    #nova_senha2{
+        font-size: 1.7rem;
+        margin-top: 5px;
+        padding: 6px;
+        width: 100%;
+    }
+    
+    .Pedidos th {
+        white-space: initial!important;
+    }
+}
+
+.page-central_senha{
+    
+    #frm2{
+        @media screen and (max-width: $sm){
+            font-size: 0;
+            
+            label,
+            h3{
+                display: block;
+                font-size: 1.4rem;
+                margin: 15px 0 0;
+            }
+        }
+        
+        input[type="image"]{
+            background: url('../img/send-button.png') left top;
+            height: 0;
+            margin-top: 15px;
+            padding: 20px 65px;
+            width: 0;
+        }
+    }
+}
+
+.page-central_rastrear{
+    @media screen and (max-width: $sm){
+        .board{
+            overflow: scroll;
+        }
+    }
+}
+
+// track order
+.page-central_rastrear{ 
+    
+    table{
+        margin-top: 0;
+    }
+}

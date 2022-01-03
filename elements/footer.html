@@ -1,0 +1,756 @@
+{% if pages.current == 'search' %}
+{% set vitrineExibe2 = settings.vitrine_2_exibicao %}
+{% if vitrineExibe2 == "bestSelers" %}
+{% set vitrineTwo = Products({
+'order': {'quantity_sold': 'desc'},
+'limit': settings.vitrine_2_qtd
+}) %}
+{% else %}
+{% set vitrineTwo = Products({
+'filter': vitrineExibe2,
+'limit': settings.vitrine_2_qtd
+}) %}
+{% endif %}
+{% if settings.vitrine_2 != "" %}
+{% if vitrineTwo|length > 0 %}
+<div class="vitrine-home" data-vitrine="destaques">
+	<div class="container">
+		<div class="vitrine-content">
+			<div class="vitrine-title">
+				<h2>Veja Tamb&#x00E9;m:</h2>
+				<p>
+					{{ settings.vitrine_2_subtitulo }}
+				</p>
+			</div>
+
+
+			<div
+				class="vitrine-produtos {% if settings.vitrine_2_carrossel_grade == 'carrossel' and vitrineTwo|length > 4 and not utils.is_mobile %}carrossel-prod{% endif %}">
+				{% for product in vitrineTwo %}
+				<div class="col-md-3 col-xs-6 col-sm-4">
+					{% element 'snippets/product' {"product": product, "idVitrine": 2} %}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endif %}
+
+{% endif %}
+
+
+{% element 'snippets/carrossel-marcas' %}
+
+<div class="newsletter-main">
+	{% if settings.msg_topo_site %}
+
+	<div class="newsletter-mensage">
+		<span class="aspas-prev aspas">
+			<svg width="40" height="32" viewbox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink">
+				<rect width="40" height="32" fill="url(#pattern0)" />
+				<defs>
+					<pattern id="pattern0" patterncontentunits="objectBoundingBox" width="1" height="1">
+						<use xlink:href="#image0_102_2" transform="scale(0.025 0.03125)" />
+					</pattern>
+					<image id="image0_102_2" width="40" height="32"
+						xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAgCAYAAABgrToAAAACvklEQVRYhb2YS4iOURjHf+dzTQrlsmDhnssQChkLdZRYuK5ZWthIMjUbG83KZSPEAilhYSHKAp1sJOVuRoopmo3LTJNC5HJ03s6n1/je5znnM/x38z7/ec7vPec8zznvR668o5b9TwnyjiGNXMmDeYfxjnbgtXd0eMfEQQIb7h0HgR7vaPOO0eW4SUwyCjgPbCg9/gycBg4ZS3eTcJOAK8DS0uN+4DBwxFh6VcAIdwNYUWH5AbQay51MuCnATWBGhaUXmC0ucdwXFwW4oGNNwI0BrgtwQXuMpV/bg/uBdUL8IbA7Ey689AVgjmA7ZyxnkIrEO9Yog38DthnL1xzAmHOtEH8L7Kz/0RAwVtIJZaCjxtKZQ+Yds4B9im2vsfSJgGH9galCko9ARw5c1AFgpBB/AZwsP/gD0DvGAruUgU6FFpBD5h2LgY2KLbSs7yIgsAOKKpN0PAcuql2JfwLODnz4G2A8xrYriR4Yy9McMu8YD2xWbJeM5YMICKwGpimJLufARW0FhjWTdyDgloTBruaQRW1S4h641ijwCzBcBoD1SqJw/t7PIYtFt1KxdYZTQwQEWoDJSqJ7xhYNOkergKGK/1ZVoAzYmjDo7Uy4oOUJnspVKQNqyxCUdSmIWpbgeVQVKAMuSkh0N5WqpCVKPBRI5ZFZAHpX7BHpdhEUetSrHDLvij09TrF1G1s06WpAYGZCn+oytnjbHLUkeMULRx1wXkKiJ5lwQQsSPI+lYB3wr9+0Qv91BsU3rdDCBI+4MnVArUDIncF4tZ+r2L7EO2ClajGRBvjGWN7lAMYPIulyGvRMO5nCDE4HRiiJ/tX+U7dNAJyfkKgZwJT9p+ZNBWymQAalM9QSK7iZGUzpgWpvTZnBcHp0pXMVFRyKI5xOkt4bS4+WK5zB4fvipeDpM7b4zMzRhPijkKTnakLgJ65dpreK70qMAAAAAElFTkSuQmCC" />
+				</defs>
+			</svg>
+
+		</span>
+		<span class="msg-text">{{settings.msg_topo_site}}</span>
+		<span class="aspas-next aspas">
+			<svg width="40" style="transform: rotate(180deg);" height="32" viewbox="0 0 40 32" fill="none"
+				xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<rect width="40" height="32" fill="url(#pattern0)" />
+				<defs>
+					<pattern id="pattern0" patterncontentunits="objectBoundingBox" width="1" height="1">
+						<use xlink:href="#image0_102_3" transform="scale(0.025 0.03125)" />
+					</pattern>
+					<image id="image0_102_3" width="40" height="32"
+						xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAgCAYAAABgrToAAAACfklEQVRYhcWYu2tUQRSHv1kLIYo2WiZGCyHgCxRERCOD4KPQQlTQzsbGv0Csg4KCpBADwXejhS+wER21UMRCCzVoECSCjVFUgjYRR+ZyN2zWu3POWbx4mtzk/vjmy0zOzGQdQsXAHOAaFF9ztdd5piVea8XAFWB+JjKtEVwOvBViE87Tb5RbDHwSYmMNBWuFIvNK6WXlqgRXKTIvFZluuK81gisVmW4ENdz/Kqha4myTxEAPMAXkfpFfQI+lg2PAldx5EleawQFBLtUb6/YCLBXkUo0nrjR4XcuraZAxFLNTVwerGgSFoAZU1x6oEtSA6prBYok7dnEMLAImBciU8yywmMXAXOCHcLbP7Ay5GayrQQYUF4/x5s6QE1ytGOyFza2odYrM8+ZDTnCNAvRU5zSr1isyj5sPOcG1CtAzm1tRGxSZJ82HyiaJgYXA11wTdXkHTA31TeB+BHqdJ5KZwY0CJNUdi5yBe7spR0Zwh2KwGza3orYrMtdbv/lLsLxp7BIgH4BgMSu5u4XY+3Zu1QxuBvoE0Kjz/LYIApuAJUJmpJ1bJXhYgHwHzhjltNyR9h/OEoyhuKftE0CnneeLxazk7hdix50vOryzIDAkHEMTwEmLnJL7DhiuejHT8jEUf3uPhIG2Oc9di1kMDAIPhdgW56vHbpSQ9N/9eQFyogu5tDFfEGJDneRoWeKzwLIM5BZw1CiXVuccZE+bm8CxHKcRA1uBA5nM/fS+i20l7Xl7Mu8fAAdbT41KQee5V96cL5YXxda6BOx0np9GOZwvZifdKS+nD4HaXl9Np4qZGwN9MTAcA5MxcMgqleH2xsCpGPgcA0f+BVDziUP9XOAPePikoMO2O8cAAAAASUVORK5CYII=" />
+				</defs>
+			</svg>
+
+		</span>
+	</div>
+
+	<div class="bg-newsletter">
+		<img src="{{asset('img/new-bannernewsletter.png')}}" alt="Receba nossa newsletter">
+	</div>
+
+	{% endif %}
+
+	{% element 'snippets/newsletter' %}
+
+</div>
+
+<footer class="footer-main">
+	<div class="container">
+		<div class="content-footer">
+
+			<div class="secundario-footer" id="scrollFooter">
+				<div class="col-md-3 col-xs-12">
+					<div class="item-footer">
+						{% if pages.current == 'home' %}
+						<h2 class="site-logo" alt="{{ store.name }}">
+							<a href="{{ links.home }}" data-tray-tst="logotipo_loja">
+								{{ Image('logo') }}
+							</a>
+						</h2>
+						{% else %}
+						<a href="{{ links.home }}" class="site-logo" data-tray-tst="logotipo_loja">
+							{{ Image('logo') }}
+						</a>
+						{% endif %}
+						<ul class="list-social">
+
+							{% if settings.social_instagram %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_instagram}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<g xmlns="http://www.w3.org/2000/svg">
+													<g>
+														<path
+															d="M404.831,94.739c-6.853,0-12.43,5.577-12.43,12.43s5.577,12.43,12.43,12.43c6.854,0,12.43-5.576,12.43-12.43    S411.685,94.739,404.831,94.739z"
+															fill="#000000" data-original="#000000" class=""></path>
+													</g>
+												</g>
+												<g xmlns="http://www.w3.org/2000/svg">
+													<g>
+														<path
+															d="M256,145.804c-60.762,0-110.196,49.434-110.196,110.196c0,60.762,49.434,110.197,110.196,110.197    c60.763,0,110.197-49.434,110.197-110.196C366.197,195.239,316.763,145.804,256,145.804z"
+															fill="#000000" data-original="#000000" class=""></path>
+													</g>
+												</g>
+												<g xmlns="http://www.w3.org/2000/svg">
+													<g>
+														<path
+															d="M371.643,0H140.357C62.964,0,0,62.964,0,140.358v231.285C0,449.037,62.964,512,140.357,512h231.286    C449.037,512,512,449.036,512,371.643V140.358C512,62.964,449.037,0,371.643,0z M256,396.432    c-77.435,0-140.431-62.997-140.431-140.432S178.566,115.57,256,115.57S396.432,178.566,396.432,256S333.434,396.432,256,396.432z     M404.831,149.836c-23.526,0-42.666-19.14-42.666-42.666c0-23.526,19.14-42.667,42.666-42.667    c23.526,0,42.666,19.14,42.666,42.666S428.357,149.836,404.831,149.836z"
+															fill="#000000" data-original="#000000" class=""></path>
+													</g>
+												</g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_facebook %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_facebook}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 28.84 54.25">
+											<g id="Layer_2" data-name="Layer 2">
+												<g id="AUA">
+													<path class="cls-1"
+														d="M27,30.28l1.49-9.74H19.09V14.22C19.09,11.55,20.4,9,24.58,9h4.26V.66A51.78,51.78,0,0,0,21.29,0C13.59,0,8.56,4.67,8.56,13.11v7.43H0v9.74H8.56V53.84a34,34,0,0,0,10.53,0V30.28Z" />
+												</g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_twitter %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_twitter}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<path xmlns="http://www.w3.org/2000/svg" style=""
+													d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016  c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992  c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056  c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152  c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792  c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44  C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568  C480.224,136.96,497.728,118.496,512,97.248z"
+													fill="#03a9f4" data-original="#03a9f4" class=""></path>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_youtube %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_youtube}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0"
+											viewbox="0 0 461.001 461.001" style="enable-background:new 0 0 512 512" xml:space="preserve"
+											class="">
+											<g>
+												<path xmlns="http://www.w3.org/2000/svg" style=""
+													d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728  c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137  C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607  c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z"
+													fill="#f61c0d" data-original="#f61c0d"></path>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_pinterest %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_pinterest}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 24 24"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<path xmlns="http://www.w3.org/2000/svg"
+													d="m12.326 0c-6.579.001-10.076 4.216-10.076 8.812 0 2.131 1.191 4.79 3.098 5.633.544.245.472-.054.94-1.844.037-.149.018-.278-.102-.417-2.726-3.153-.532-9.635 5.751-9.635 9.093 0 7.394 12.582 1.582 12.582-1.498 0-2.614-1.176-2.261-2.631.428-1.733 1.266-3.596 1.266-4.845 0-3.148-4.69-2.681-4.69 1.49 0 1.289.456 2.159.456 2.159s-1.509 6.096-1.789 7.235c-.474 1.928.064 5.049.111 5.318.029.148.195.195.288.073.149-.195 1.973-2.797 2.484-4.678.186-.685.949-3.465.949-3.465.503.908 1.953 1.668 3.498 1.668 4.596 0 7.918-4.04 7.918-9.053-.016-4.806-4.129-8.402-9.423-8.402z"
+													fill="#000000" data-original="#000000" style=""></path>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_linkedin %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_linkedin}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 24 24"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<path xmlns="http://www.w3.org/2000/svg"
+													d="m23.994 24v-.001h.006v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07v-2.185h-4.773v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243v7.801z"
+													fill="#000000" data-original="#000000" style=""></path>
+												<path xmlns="http://www.w3.org/2000/svg" d="m.396 7.977h4.976v16.023h-4.976z" fill="#000000"
+													data-original="#000000" style=""></path>
+												<path xmlns="http://www.w3.org/2000/svg"
+													d="m2.882 0c-1.591 0-2.882 1.291-2.882 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909c-.001-1.591-1.292-2.882-2.882-2.882z"
+													fill="#000000" data-original="#000000" style=""></path>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_twitch %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_twitch}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<g xmlns="http://www.w3.org/2000/svg" id="Layer_x0020_1">
+													<path
+														d="m44.57 0-33.39 89.04v356.14h122.38v66.82h66.81l66.75-66.82h100.14l133.56-133.51v-311.67zm44.49 44.49h367.26v244.88l-77.92 77.92h-122.4l-66.73 66.73v-66.73h-100.21zm122.42 222.65h44.52v-133.55h-44.52zm122.41 0h44.51v-133.55h-44.51z"
+														fill-rule="nonzero" fill="#000000" data-original="#000000" style=""></path>
+												</g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.social_discord %}
+							<li class="item-list">
+								<a target="_blank" href="{{settings.social_discord}}">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<g xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="m185.127 203.143c-29.607 0-53.695 26.537-53.695 59.155s24.088 59.155 53.695 59.155c29.608 0 53.697-26.537 53.697-59.155s-24.089-59.155-53.697-59.155zm0 88.31c-13.065 0-23.695-13.079-23.695-29.155s10.63-29.155 23.695-29.155c13.066 0 23.697 13.079 23.697 29.155s-10.631 29.155-23.697 29.155z"
+														fill="#000000" data-original="#000000" style=""></path>
+													<path
+														d="m326.873 203.143c-29.608 0-53.697 26.537-53.697 59.155s24.089 59.155 53.697 59.155c29.607 0 53.695-26.537 53.695-59.155s-24.088-59.155-53.695-59.155zm0 88.31c-13.066 0-23.697-13.079-23.697-29.155s10.631-29.155 23.697-29.155c13.065 0 23.695 13.079 23.695 29.155s-10.63 29.155-23.695 29.155z"
+														fill="#000000" data-original="#000000" style=""></path>
+													<path
+														d="m511.977 362.577c-.354-6.342-9.324-156.358-66.291-246.097-1.165-1.835-2.716-3.396-4.543-4.572-70.44-45.359-118.421-45.229-120.428-45.237-5.819.077-10.829 3.461-13.251 8.351l-24.199 46.374c-9.014-.59-18.115-.896-27.265-.896-9.148 0-18.25.306-27.264.896l-24.172-46.32c-2.411-4.918-7.438-8.327-13.279-8.404-2.019-.012-49.994-.118-120.426 45.237-1.827 1.177-3.378 2.737-4.543 4.572-56.968 89.738-65.939 239.754-66.293 246.096-.222 3.976 1.146 7.877 3.803 10.844 2.642 2.948 65.401 71.909 152.148 71.909.388 0 .787-.002 1.176-.004 4.559-.033 8.854-2.137 11.675-5.716l40.013-50.779c15.368 1.755 31.153 2.669 47.162 2.669 16.01 0 31.795-.914 47.162-2.669l40.013 50.779c2.821 3.579 7.116 5.683 11.675 5.716.395.003.782.004 1.176.004 86.739 0 149.508-68.961 152.148-71.909 2.656-2.967 4.024-6.868 3.803-10.844zm-149.85 52.612-25.016-31.748c38.08-7.834 72.259-21.164 98.937-39.063 6.88-4.615 8.716-13.934 4.1-20.813-4.614-6.88-13.936-8.718-20.813-4.1-39.818 26.715-99.352 42.035-163.335 42.035-63.98 0-123.514-15.32-163.335-42.032-6.881-4.615-16.198-2.778-20.813 4.101-4.615 6.88-2.779 16.198 4.101 20.813 26.68 17.896 60.858 31.227 98.937 39.06l-25.015 31.746c-58.733-2.725-105.473-43.798-119.43-57.428 2.33-29.065 14.42-148.938 59.463-222.419 44.231-27.92 77.61-35.685 92.518-37.843l14.232 27.271c-33.461 4.886-64.81 13.865-91.513 26.437-7.495 3.528-10.71 12.465-7.182 19.961 3.529 7.494 12.466 10.708 19.96 7.182 38.146-17.959 87.183-27.849 138.077-27.849 50.897 0 99.935 9.892 138.079 27.853 2.065.972 4.238 1.433 6.38 1.433 5.628 0 11.024-3.185 13.581-8.614 3.528-7.494.313-16.432-7.182-19.961-26.704-12.573-58.053-21.554-91.517-26.44l14.232-27.271c14.907 2.158 48.287 9.923 92.52 37.843 44.992 73.404 57.122 193.402 59.461 222.444-13.921 13.659-60.453 54.698-119.427 57.402z"
+														fill="#000000" data-original="#000000" style=""></path>
+												</g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+							{% if settings.contato_whatsapp %}
+							<li class="item-list">
+								<a target="_blank"
+									href="https://api.whatsapp.com/send?phone=55{{ settings.contato_whatsapp|replace({'(': '', ')': '', '-': '', ' ':'' }) }}&text=Ol%C3%A1,%20gostaria%20de%20ajuda...">
+									<i>
+										<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+											xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+											style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+											<g>
+												<g xmlns="http://www.w3.org/2000/svg">
+													<g>
+														<path
+															d="M256.064,0h-0.128C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104l98.4-31.456    C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z M405.024,361.504    c-6.176,17.44-30.688,31.904-50.24,36.128c-13.376,2.848-30.848,5.12-89.664-19.264C189.888,347.2,141.44,270.752,137.664,265.792    c-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624,26.176-62.304c6.176-6.304,16.384-9.184,26.176-9.184    c3.168,0,6.016,0.16,8.576,0.288c7.52,0.32,11.296,0.768,16.256,12.64c6.176,14.88,21.216,51.616,23.008,55.392    c1.824,3.776,3.648,8.896,1.088,13.856c-2.4,5.12-4.512,7.392-8.288,11.744c-3.776,4.352-7.36,7.68-11.136,12.352    c-3.456,4.064-7.36,8.416-3.008,15.936c4.352,7.36,19.392,31.904,41.536,51.616c28.576,25.44,51.744,33.568,60.032,37.024    c6.176,2.56,13.536,1.952,18.048-2.848c5.728-6.176,12.8-16.416,20-26.496c5.12-7.232,11.584-8.128,18.368-5.568    c6.912,2.4,43.488,20.48,51.008,24.224c7.52,3.776,12.48,5.568,14.304,8.736C411.2,329.152,411.2,344.032,405.024,361.504z"
+															fill="#000000" data-original="#000000" class=""></path>
+													</g>
+												</g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+												<g xmlns="http://www.w3.org/2000/svg"></g>
+											</g>
+										</svg>
+									</i>
+								</a>
+							</li>
+							{% endif %}
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-xs-12">
+					<div class="item-footer">
+						<div class="title-item" data-title="inst">
+							<h2>Institucional</h2>
+						</div>
+
+						<div class="links-item" data-tab="inst">
+							{% for page in pages.custom %}
+							<a target="_blank" href="{{ page.url }}">{{page.name}}</a>
+							{% endfor %}
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-2 col-xs-12">
+					<div class="item-footer">
+						<div class="title-item" data-title="produtos">
+							<h2>Loja</h2>
+						</div>
+
+						<div class="links-item" data-tab="produtos">
+							<a href="{{links.account}}">Minha Conta</a>
+							<a href="{{ links.orders }}">Meus Pedidos</a>
+							<a href="{{links.cart}}">Carrinho</a>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 col-xs-12">
+
+					<div class="item-footer">
+						<div class="title-item" data-title="duvidas">
+							<h2>D&#x00FA;vidas</h2>
+						</div>
+
+						<div class="links-item" data-tab="duvidas">
+							<a href="{{links.contact}}">Fale conosco</a>
+
+							{% if settings.contato_whatsapp %}
+							<a target="_blank"
+								href="https://api.whatsapp.com/send?phone=55{{ settings.contato_whatsapp|replace({'(': '', ')': '', '-': '', ' ':'' }) }}&text=Ol%C3%A1,%20gostaria%20de%20ajuda...">
+								<i>
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+										xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+										style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+										<g>
+											<g xmlns="http://www.w3.org/2000/svg">
+												<g>
+													<path
+														d="M256.064,0h-0.128C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104l98.4-31.456    C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z M405.024,361.504    c-6.176,17.44-30.688,31.904-50.24,36.128c-13.376,2.848-30.848,5.12-89.664-19.264C189.888,347.2,141.44,270.752,137.664,265.792    c-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624,26.176-62.304c6.176-6.304,16.384-9.184,26.176-9.184    c3.168,0,6.016,0.16,8.576,0.288c7.52,0.32,11.296,0.768,16.256,12.64c6.176,14.88,21.216,51.616,23.008,55.392    c1.824,3.776,3.648,8.896,1.088,13.856c-2.4,5.12-4.512,7.392-8.288,11.744c-3.776,4.352-7.36,7.68-11.136,12.352    c-3.456,4.064-7.36,8.416-3.008,15.936c4.352,7.36,19.392,31.904,41.536,51.616c28.576,25.44,51.744,33.568,60.032,37.024    c6.176,2.56,13.536,1.952,18.048-2.848c5.728-6.176,12.8-16.416,20-26.496c5.12-7.232,11.584-8.128,18.368-5.568    c6.912,2.4,43.488,20.48,51.008,24.224c7.52,3.776,12.48,5.568,14.304,8.736C411.2,329.152,411.2,344.032,405.024,361.504z"
+														fill="#000000" data-original="#000000" class=""></path>
+												</g>
+											</g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+											<g xmlns="http://www.w3.org/2000/svg"></g>
+										</g>
+									</svg>
+								</i>
+
+								Atendimento
+							</a>
+							{% endif %}
+
+							{% if settings.contato_telefone1 %}
+							<a href="tel:+55{{ settings.contato_telefone1}}">
+								<i>
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+										xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 32 32"
+										style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+										<g>
+											<path xmlns="http://www.w3.org/2000/svg"
+												d="m30.035 22.6c-.082-.065-6.035-4.356-7.669-4.048-.78.138-1.226.67-2.121 1.735-.144.172-.49.584-.759.877a12.517 12.517 0 0 1 -1.651-.672 13.7 13.7 0 0 1 -6.321-6.321 12.458 12.458 0 0 1 -.672-1.651c.294-.27.706-.616.882-.764 1.06-.89 1.593-1.336 1.731-2.118.283-1.62-4.005-7.614-4.05-7.668a2.289 2.289 0 0 0 -1.705-.97c-1.738 0-6.7 6.437-6.7 7.521 0 .063.091 6.467 7.988 14.5 8.025 7.888 14.428 7.979 14.491 7.979 1.085 0 7.521-4.962 7.521-6.7a2.283 2.283 0 0 0 -.965-1.7z"
+												fill="#000000" data-original="#000000" class=""></path>
+										</g>
+									</svg>
+								</i>
+								{{ settings.contato_telefone1 }}
+							</a>
+							{% endif %}
+
+							{% if settings.contato_telefone2 %}
+							<a href="tel:+55{{ settings.contato_telefone2}}">
+								<i>
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+										xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 32 32"
+										style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+										<g>
+											<path xmlns="http://www.w3.org/2000/svg"
+												d="m30.035 22.6c-.082-.065-6.035-4.356-7.669-4.048-.78.138-1.226.67-2.121 1.735-.144.172-.49.584-.759.877a12.517 12.517 0 0 1 -1.651-.672 13.7 13.7 0 0 1 -6.321-6.321 12.458 12.458 0 0 1 -.672-1.651c.294-.27.706-.616.882-.764 1.06-.89 1.593-1.336 1.731-2.118.283-1.62-4.005-7.614-4.05-7.668a2.289 2.289 0 0 0 -1.705-.97c-1.738 0-6.7 6.437-6.7 7.521 0 .063.091 6.467 7.988 14.5 8.025 7.888 14.428 7.979 14.491 7.979 1.085 0 7.521-4.962 7.521-6.7a2.283 2.283 0 0 0 -.965-1.7z"
+												fill="#000000" data-original="#000000" class=""></path>
+										</g>
+									</svg>
+								</i>
+								{{ settings.contato_telefone2 }}
+							</a>
+							{% endif %}
+
+							{% if settings.contato_email1 %}
+							<a href="mailto:{{settings.contato_email1}}">
+								<i>
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+										xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+										style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+										<g>
+											<path xmlns="http://www.w3.org/2000/svg"
+												d="m298.789 313.693c-12.738 8.492-27.534 12.981-42.789 12.981-15.254 0-30.05-4.489-42.788-12.981l-209.803-139.873c-1.164-.776-2.298-1.585-3.409-2.417v229.197c0 26.278 21.325 47.133 47.133 47.133h417.733c26.278 0 47.133-21.325 47.133-47.133v-229.198c-1.113.834-2.249 1.645-3.416 2.422z"
+												fill="#000000" data-original="#000000"></path>
+											<path xmlns="http://www.w3.org/2000/svg"
+												d="m20.05 148.858 209.803 139.874c7.942 5.295 17.044 7.942 26.146 7.942 9.103 0 18.206-2.648 26.148-7.942l209.803-139.874c12.555-8.365 20.05-22.365 20.05-37.475 0-25.981-21.137-47.117-47.117-47.117h-417.766c-25.98.001-47.117 21.137-47.117 47.142 0 15.085 7.496 29.085 20.05 37.45z"
+												fill="#000000" data-original="#000000"></path>
+										</g>
+									</svg>
+								</i>
+								{{ settings.contato_email1 }}
+							</a>
+							{% endif %}
+
+
+							{% if settings.contato_email2 %}
+							<a href="mailto:{{settings.contato_email2}}">
+								<i>
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+										xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewbox="0 0 512 512"
+										style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+										<g>
+											<path xmlns="http://www.w3.org/2000/svg"
+												d="m298.789 313.693c-12.738 8.492-27.534 12.981-42.789 12.981-15.254 0-30.05-4.489-42.788-12.981l-209.803-139.873c-1.164-.776-2.298-1.585-3.409-2.417v229.197c0 26.278 21.325 47.133 47.133 47.133h417.733c26.278 0 47.133-21.325 47.133-47.133v-229.198c-1.113.834-2.249 1.645-3.416 2.422z"
+												fill="#000000" data-original="#000000"></path>
+											<path xmlns="http://www.w3.org/2000/svg"
+												d="m20.05 148.858 209.803 139.874c7.942 5.295 17.044 7.942 26.146 7.942 9.103 0 18.206-2.648 26.148-7.942l209.803-139.874c12.555-8.365 20.05-22.365 20.05-37.475 0-25.981-21.137-47.117-47.117-47.117h-417.766c-25.98.001-47.117 21.137-47.117 47.142 0 15.085 7.496 29.085 20.05 37.45z"
+												fill="#000000" data-original="#000000"></path>
+										</g>
+									</svg>
+								</i>
+								{{ settings.contato_email2 }}
+							</a>
+							{% endif %}
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-xs-12">
+
+					<div class="item-footer">
+						<div class="title-item">
+							<h2>Formas de Pagamento</h2>
+						</div>
+
+						<div class="formas-pagamento">
+							<div class="payment-content">
+								{% for payment in paymentMethods.order %}
+								<div class="payment-item">
+									<img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
+								</div>
+								{% endfor %}
+								{% for payment in paymentMethods.credit %}
+								<div class="payment-item">
+									<img src="{{ payment.thumbnail.url }}" alt="{{ payment.display_name }}">
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="title-item">
+							<h2>Formas de envio</h2>
+						</div>
+
+						<div class="formas-envio">
+							<img src="{{asset('img/formasEnvio.png')}}" alt="Formas de envio">
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</footer><!-- Agencia R8 -->
+<style>
+	.signature {
+		padding: 10px 0;
+	}
+
+	.signature * {
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 1.35rem;
+		text-transform: uppercase;
+	}
+
+	.signature .container .signature-content {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.signature .container .signature-content .store-info {
+		color: black;
+		text-align: left;
+		font-weight: 300;
+	}
+
+	.signature .container .signature-content .store-info strong {
+		text-align: center;
+	}
+
+	.signature .container .signature-content .logos a {
+		margin: 0 10px;
+		text-decoration: none;
+	}
+
+	.signature .container .signature-content .logos a.tooltip {
+		display: inline;
+		position: relative;
+	}
+
+	.signature .container .signature-content .logos a.tooltip:hover:after {
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: center;
+		justify-content: center;
+		background: #444;
+		border-radius: 8px;
+		color: #fff;
+		content: attr(title);
+		margin: -82px auto 0;
+		font-size: 16px;
+		padding: 13px;
+		width: 220px;
+	}
+
+	.signature .container .signature-content .logos a.tooltip:hover:before {
+		border: solid;
+		border-color: #444 transparent;
+		border-width: 12px 6px 0 6px;
+		content: "";
+		left: 45%;
+		bottom: 30px;
+		position: absolute;
+		display: none;
+	}
+
+
+	@media(max-width: 635px) {
+		.signature .container .signature-content {
+			flex-flow: row wrap;
+		}
+
+		.signature .container .signature-content .store-info {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+	}
+
+	div#NavLogoTray {
+		display: none !important;
+	}
+
+
+	/*== start of code for tooltips ==*/
+	.tool {
+		cursor: help;
+		position: relative;
+		text-align: center;
+	}
+
+
+	/*== common styles for both parts of tool tip ==*/
+	.tool::before,
+	.tool::after {
+		left: 50%;
+		opacity: 0;
+		position: absolute;
+		z-index: -100;
+		display: none;
+
+	}
+
+	.tool:hover::before,
+	.tool:focus::before,
+	.tool:hover::after,
+	.tool:focus::after {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+		z-index: 100;
+	}
+
+
+	/*== pointer tip ==*/
+	.tool::before {
+		border-style: solid;
+		border-width: 1em 0.75em 0 0.75em;
+		border-color: #000 transparent transparent transparent;
+		bottom: 100%;
+		content: "";
+		margin-left: -0.5em;
+		transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26), opacity 0.65s 0.5s;
+		transform: scale(0.6) translateY(-90%);
+	}
+
+	.tool:hover::before,
+	.tool:focus::before {
+		transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26) 0.2s;
+	}
+
+
+	/*== speech bubble ==*/
+	.tool::after {
+		background: #000;
+		border-radius: 0.25em;
+		bottom: 180%;
+		color: #EDEFF0;
+		content: attr(data-tip);
+		margin-left: -8.75em;
+		padding: 1em;
+		transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26) 0.2s;
+		transform: scale(0.6) translateY(50%);
+		width: 17.5em;
+	}
+
+	.tool:hover::after,
+	.tool:focus::after {
+		transition: all 0.65s cubic-bezier(0.84, -0.18, 0.31, 1.26);
+	}
+
+	@media(max-width: 760px) {
+		.tool::after {
+			font-size: 0.75em;
+			margin-left: -5em;
+			width: 10em;
+		}
+	}
+</style>
+<div class="signature">
+	<!-- footer padrao agencia R8-->
+	<link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,700" rel="stylesheet">
+	<div class="container">
+		<div class="signature-content">
+			<div class="store-info">
+				<strong>
+					&#x00A9;
+					{{ store.name }}
+					<span id="ctYear"></span>. Todos os direitos reservados.
+					CNPJ:
+					{{ settings.cnpj_loja }}
+				</strong>
+			</div>
+			<div class="logos">
+
+				<a href="https://agenciar8.com.br/tray/" tabindex="0" rel="noreferrer" target="_blank">
+					<span class="tool" data-tip="Design e Implementaï¿½ï¿½o" tabindex="0">
+						<img src="https://agenciar8.com.br/footerlogos/agenciar8.png" alt="Agï¿½ncia R8" data-placement="left" />
+					</span>
+				</a>
+				<a class="" href="https://www.tray.com.br/" tabindex="0" rel="noreferrer" target="_blank">
+					<span class="tool" data-tip="Tecnologia" tabindex="0">
+						<img src="https://agenciar8.com.br/footerlogos/tray_varejo.png" alt="Tray" data-placement="left" />
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		(function () {
+			document.getElementById("ctYear").innerHTML = new Date().getFullYear();
+		})();</script>
+</div>
