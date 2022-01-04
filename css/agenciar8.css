@@ -432,7 +432,7 @@ html .botao-destaque:hover, html .botao-frete:hover, html .botao-indisponivel:ho
 }
 
 strong.suggestion-title {
-    background-color: #ff7a01;
+    background-color: var(--fundo_cabecalho);
     color: #000;
     margin-bottom: 30px;
 }
@@ -1695,11 +1695,13 @@ main#main-product section#section-product div.content-gallery div.box-image {
     justify-content: center;
     align-items: start;
 }
-@media(min-width: 992px){
-    main#main-product section#section-product div.content-gallery div.box-image{
+
+@media(min-width: 992px) {
+    main#main-product section#section-product div.content-gallery div.box-image {
         padding-top: 120px;
     }
 }
+
 main#main-product section#section-product div.content-gallery div.box-image img {
     max-height: 560px;
 }
@@ -5378,8 +5380,12 @@ header.main-header.ativo {
     z-index: 999;
 }
 
+header.main-header div.nav-full {
+    background-color: var(--fundo_nav);
+}
+
 header.main-header.ativo div.nav-full nav.nav-maneiro div.nav-content div.lvl1 {
-    height: 25px;
+    height: 35px;
 }
 
 header.main-header.ativo div.nav-full nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link i.icon-category {
@@ -5509,12 +5515,14 @@ header.main-header div.content-header div.busca-avancada div.search-engine form 
     width: 100%;
     padding: 0 15px;
     border-radius: 30px;
-    border: 1px solid #041827;
+    border: 1px solid var(--borda_busca);
+    background-color: var(--fundo_busca);
+    color: var(--texto_busca);
     transition: width 0.5s;
 }
 
 header.main-header div.content-header div.busca-avancada div.search-engine form input::placeholder {
-    color: #c5c5c5;
+    color: var(--texto_busca);
 }
 
 header.main-header div.content-header div.busca-avancada div.search-engine form button {
@@ -5524,6 +5532,10 @@ header.main-header div.content-header div.busca-avancada div.search-engine form 
     transform: translateY(-50%);
     background-color: transparent;
     border: none;
+}
+
+header.main-header div.content-header div.busca-avancada div.search-engine form button svg *{
+    fill: var(--icone_busca);
 }
 
 header.main-header div.content-header div.account-cart {
@@ -5555,7 +5567,7 @@ header.main-header div.content-header div.account-cart div.item-header a {
 
 header.main-header div.content-header div.account-cart div.item-header a span.text-cart {
     margin-left: 10px;
-    color: #000;
+    color: var(--texto_cabecalho);
     font-size: 15px;
 }
 
@@ -5591,14 +5603,14 @@ header.main-header div.content-header div.account-cart div.item-header i.icon-he
     position: absolute;
     top: -10px;
     right: -10px;
-    background-color: #fcbd18;
+    background-color: var(--fundo_cabecalho_qtd_carrinho);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 header.main-header div.content-header div.account-cart div.item-header i.icon-header small span {
-    color: #fff;
+    color: var(--texto_cabecalho_qtd_carrinho);
     font-size: 15px;
     font-style: normal;
 }
@@ -5606,6 +5618,10 @@ header.main-header div.content-header div.account-cart div.item-header i.icon-he
 header.main-header div.content-header div.account-cart div.item-header i.icon-header svg {
     width: 49px;
     height: 44px;
+}
+
+header.main-header div.content-header div.account-cart div.item-header i.icon-header svg * {
+    fill: var(--texto_cabecalho);
 }
 
 @media (max-width: 990px) {
@@ -5899,7 +5915,7 @@ div.newsletter-main section.newsletter-content form button {
 }
 
 footer.footer-main {
-    background-color: #e7e9f2;
+    background-color: var(--fundo_rodape);
     padding: 20px 0;
 }
 
@@ -6356,10 +6372,7 @@ div.customer-tarja div.content-tarja div.item a h4 {
 }
 
 nav.nav-maneiro {
-    background-color: #ff7a01;
     transition: all 1s;
-    border-top: 1px solid transparent;
-    padding: 10px 0;
 }
 
 nav.nav-maneiro div.col-md-12 {
@@ -6380,10 +6393,9 @@ nav.nav-maneiro div.nav-content {
 
 nav.nav-maneiro div.nav-content div.lvl1 {
     height: 85px;
-    padding: 0 10px;
+    padding: 10px;
     position: relative;
     width: 100%;
-    background-color: #ff7a01;
     transition: 0.8s ease-in;
 }
 
@@ -6436,11 +6448,10 @@ nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories.all-categories {
 }
 
 nav.nav-maneiro div.nav-content div.lvl1:hover {
-    background-color: #cc6201;
+    background-color: var(--fundo_nav_hover);
 }
 
 nav.nav-maneiro div.nav-content div.lvl1.hover-overlay:hover {
-    background-color: #cc6201;
     z-index: 999;
 }
 
@@ -6453,7 +6464,7 @@ nav.nav-maneiro div.nav-content div.lvl1:hover a.lvl1-link h2 {
 }
 
 header.main-header.ativo nav.nav-maneiro div.nav-content div.lvl1:hover div.prods-categories {
-    top: 25px;
+    top: 35px;
 }
 
 nav.nav-maneiro div.nav-content div.lvl1:hover div.prods-categories {
@@ -6499,6 +6510,13 @@ nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link i.icon-category {
 nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link i.icon-category img {
     max-width: 40px;
     max-height: 40px;
+}
+
+nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link i.icon-category img.light {
+    filter: brightness(100);
+}
+
+nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link i.icon-category img.dark {
     filter: brightness(0);
 }
 
@@ -6507,7 +6525,7 @@ nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link:hover {
 }
 
 nav.nav-maneiro div.nav-content div.lvl1 a.lvl1-link h2 {
-    color: #000;
+    color: var(--texto_nav);
     font-weight: normal;
     font-size: 11px;
     white-space: nowrap;
@@ -6526,7 +6544,7 @@ nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories {
     transform: translateX(-50%);
     top: 85px;
     z-index: 11;
-    background-color: #fff;
+    background-color: var(--fundo_sub_nav);
     width: 500px;
     padding: 20px 15px;
     opacity: 0;
@@ -6544,7 +6562,7 @@ nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-hea
 
 nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-header div.title h2 {
     font-size: 21px;
-    color: #000;
+    color: var(--text_fundo_sub_nav);
     text-transform: none;
     position: relative;
     margin-left: 5px;
@@ -6559,6 +6577,13 @@ nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-hea
 nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-header div.title h2 i img {
     width: 25px;
     height: 25px;
+}
+
+nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-header div.title h2 i img.light {
+    filter: brightness(100);
+}
+
+nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-header div.title h2 i img.dark {
     filter: brightness(0);
 }
 
@@ -6629,9 +6654,13 @@ nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-bod
     margin-right: 13px;
 }
 
+nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-body div.lvl2 a:hover h2 {
+    color: var(--text_sub_nav_hover);
+}
+
 nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-body div.lvl2 a h2 {
     font-size: 17px;
-    color: black;
+    color: var(--text_fundo_sub_nav);
     text-transform: none;
     transition: color 0.3s;
     margin-bottom: 15px;
@@ -6651,7 +6680,13 @@ nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-bod
     width: 15px;
     height: 15px;
 }
+nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-body div.lvl2 a:hover h2 i svg *{
+    fill: var(--text_sub_nav_hover);
+}
 
+nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-body div.lvl2 a h2 i svg *{
+    fill: var(--text_fundo_sub_nav);
+}
 nav.nav-maneiro div.nav-content div.lvl1 div.prods-categories div.categories-body div.lvl2 div.lvl3 {
     padding-left: 25px;
 }
@@ -7857,11 +7892,12 @@ div.prod-item h2.product-name {
     margin-bottom: 0;
 }
 
-@media(max-width: 768px){
-    div.prod-item h2.product-name{
+@media(max-width: 768px) {
+    div.prod-item h2.product-name {
         font-size: 12px;
     }
-   .site-main div.prod-item{
+
+    .site-main div.prod-item {
         min-height: 410px;
     }
 }
@@ -7933,7 +7969,7 @@ div.prod-item div.product-price span.price-offer {
 
 div.prod-item div.product-price span.price-offer div.valor-real {
     font-family: 'creato-bold';
-    color: #fcbd16;
+    color: var(--vitrine_price);
 }
 
 @media(max-width: 990px) {
@@ -8098,7 +8134,7 @@ div.vitrine-home div.vitrine-title {
 div.vitrine-home div.vitrine-title::after {
     content: '';
     width: calc(100% - 30px);
-    background-color: #073863;
+    background-color: var(--vitrine_title);
     height: 5px;
     margin-bottom: 5px;
 }
@@ -8114,7 +8150,7 @@ div.vitrine-home div.vitrine-title::after {
 
 div.vitrine-home div.vitrine-title h2 {
     font-size: 32px;
-    color: #073863;
+    color: var(--vitrine_title);
     text-align: center;
     font-family: "creato-regular";
     margin-bottom: 5px;
@@ -8411,7 +8447,7 @@ div#recebeEndereco {
     }
 
     html.page-catalog div.prod-item, html.page-home div.prod-item {
-        border: 1px solid #efefef ;
+        border: 1px solid #efefef;
     }
 
     html.page-home div.vitrine-home div.container {
@@ -8585,8 +8621,9 @@ div.varitants-ciru ul.listaVarMultipla li div.labelMultiVariacao img {
     max-width: 160px;
     order: -1;
 }
-@media(max-width: 768px){
-    div.varitants-ciru ul.listaVarMultipla li div.labelMultiVariacao img{
+
+@media(max-width: 768px) {
+    div.varitants-ciru ul.listaVarMultipla li div.labelMultiVariacao img {
         max-width: 80px;
     }
 }
@@ -8695,6 +8732,7 @@ header.main-header div.customer-tarja {
     height: 32px;
     transition: 0.3s;
     overflow: hidden;
+    background-color: var(--topo_cabecalho);
 }
 
 header.main-header div.customer-tarja div.customer-content {
@@ -8726,16 +8764,36 @@ header.main-header div.customer-tarja div.customer-content div.account-customer 
 header.main-header div.customer-tarja div.customer-content div.account-customer a i svg {
     width: 17px;
     height: 21px;
-    fill: white;
+}
+
+header.main-header div.customer-tarja div.customer-content div.account-customer a i svg * {
+    fill: var(--topo_cabecalho_texto);
+    transition: all .5s;
+}
+
+header.main-header div.customer-tarja div.customer-content div.account-customer a:hover i svg * {
+    fill: var(--topo_cabecalho_texto_hover);
+    transition: all .5s;
 }
 
 header.main-header div.customer-tarja div.customer-content div.account-customer a h3 {
-    color: #fff;
+    color: var(--topo_cabecalho_texto);
     font-size: 12px;
     text-transform: uppercase;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid var(--topo_cabecalho_texto);
     font-weight: bold;
     margin-left: 5px;
+    transition: all .5s;
+}
+
+div.parte_principal {
+    background-color: var(--fundo_cabecalho);
+}
+
+header.main-header div.customer-tarja div.customer-content div.account-customer a:hover h3 {
+    color: var(--topo_cabecalho_texto_hover);
+    border-bottom: 1px solid var(--topo_cabecalho_texto_hover);
+    transition: all .5s;
 }
 
 header.main-header div.customer-tarja div.customer-content ul.list-social {
@@ -8755,7 +8813,13 @@ header.main-header div.customer-tarja div.customer-content ul.list-social li.ite
 }
 
 header.main-header div.customer-tarja div.customer-content ul.list-social li.item-list a i svg * {
-    fill: #000;
+    fill: var(--topo_cabecalho_texto);
+    transition: all .5s;
+}
+
+header.main-header div.customer-tarja div.customer-content ul.list-social li.item-list a i svg:hover * {
+    fill: var(--topo_cabecalho_texto_hover);
+    transition: all .5s;
 }
 
 div.banner-tarja {
@@ -9096,11 +9160,13 @@ div.zap-zap-2 h3 a i svg {
 .btn-cookies:hover {
     background-color: #bb5901;
 }
+
 .page-home .application {
     background-color: #fff;
-    padding-top: 260px;
+    padding-top: 210px;
 }
-.page-home header.main-header{
+
+.page-home header.main-header {
     position: fixed;
     width: 100%;
     top: 0;
@@ -9108,34 +9174,42 @@ div.zap-zap-2 h3 a i svg {
     z-index: 1000;
     background: white;
 }
-main#main-product section#section-product div.content-product-info div.combo-compra form div.product-price div.calculado span.price-calculed span.text-calculado{
+
+main#main-product section#section-product div.content-product-info div.combo-compra form div.product-price div.calculado span.price-calculed span.text-calculado {
     color: #595959;
     font-size: 15px;
 }
-main#main-product section#section-product div.content-product-info div.combo-compra form div.product-price div.calculado span.price-calculed{
+
+main#main-product section#section-product div.content-product-info div.combo-compra form div.product-price div.calculado span.price-calculed {
     font-size: 1.6rem;
 }
-div.varitants-ciru ul.listaVarMultipla li div.labelMultiVariacao button{
+
+div.varitants-ciru ul.listaVarMultipla li div.labelMultiVariacao button {
     background: transparent;
     border: none;
 }
+
 div#modal_zoom.in {
     background: #0000008c;
 }
+
 div#modal_zoom button#modal-zoom-close-button {
     opacity: 1;
     position: absolute;
     right: 10px;
     font-size: 3.2rem;
 }
-.imagem_produto{
+
+.imagem_produto {
     text-align: center;
 }
-header.main-header div.customer-tarja div.customer-content ul.list-social li.item-list a i svg *{
+
+header.main-header div.customer-tarja div.customer-content ul.list-social li.item-list a i svg * {
     fill: white;
 }
-@media(min-width: 1200px){
-    .modal-dialog{
+
+@media(min-width: 1200px) {
+    .modal-dialog {
         min-width: 1000px
     }
 }

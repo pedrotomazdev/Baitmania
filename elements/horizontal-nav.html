@@ -84,7 +84,7 @@
 								<a href="{{ lvl1.link }}" class="lvl1-link">
 									{% if lvl1.images[0] %}
 										<i class="icon-category">
-											<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+											<img class="{{settings.icones_nav}}" src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
 										</i>
 									{% endif %}
 									<h2>{{ lvl1.name }}</h2>
@@ -96,7 +96,7 @@
 												<h2>
 													{% if lvl1.images[0] %}
 														<i>
-															<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+															<img class="{{settings.icones_nav_sub == 'on' ? 'dark' : 'light'}}" src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
 														</i>
 													{% endif %}
 
@@ -150,7 +150,7 @@
 							<a href="{{ lvl1.link }}" class="lvl1-link">
 								{% if lvl1.images[0] %}
 									<i class="icon-category">
-										<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+										<img class="{{settings.icones_nav == 'on' ? 'dark' : 'light'}}" src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
 									</i>
 								{% endif %}
 								<h2>{{ lvl1.name }}</h2>
@@ -162,7 +162,7 @@
 											<h2>
 												{% if lvl1.images[0] %}
 													<i>
-														<img src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
+														<img class="{{settings.icones_nav_sub == 'on' ? 'dark' : 'light'}}" src="{{lvl1.images[0]}}" alt="{{lvl1.name}}">
 													</i>
 												{% endif %}
 												<strong>{{lvl1.name}}</strong>
